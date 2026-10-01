@@ -2124,3 +2124,549 @@ body.edu-page {
   }
 }
 
+/* ==========================================================================
+   NEW FEATURES: 3-WAY COLLEGE COMPARISON MATRIX & FLOATING BAR
+   ========================================================================== */
+.btn-card-compare {
+  background: #F1F5F9;
+  color: #334155;
+  border: 1px solid #CBD5E1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+.btn-card-compare:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+.btn-card-compare.active {
+  background: #C9A96E;
+  color: #0B1020;
+  border-color: #C9A96E;
+  font-weight: 700;
+}
+
+/* Floating Comparison Dock */
+.compare-floating-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: rgba(11, 16, 32, 0.94);
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  backdrop-filter: blur(16px);
+  padding: 12px 24px;
+  border-radius: 999px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.compare-floating-dock.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.compare-dock-colleges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.compare-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.compare-chip-remove {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+}
+.compare-chip-remove:hover {
+  color: #EF4444;
+}
+.btn-dock-compare {
+  background: #C9A96E;
+  color: #0B1020;
+  font-weight: 700;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.btn-dock-compare:hover {
+  background: #D8B97E;
+  transform: scale(1.03);
+}
+.btn-dock-clear {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.btn-dock-clear:hover {
+  color: #FFFFFF;
+}
+
+/* Comparison Full Modal */
+.compare-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.compare-modal-backdrop.active {
+  display: flex;
+}
+.compare-modal-dialog {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 1px solid #E2E8F0;
+}
+.compare-modal-header {
+  padding: 20px 28px;
+  background: #0B1020;
+  color: #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.compare-modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.compare-modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+.compare-modal-close:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+.compare-table-wrapper {
+  padding: 24px 28px;
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.compare-table th, .compare-table td {
+  padding: 16px;
+  border-bottom: 1px solid #E2E8F0;
+  vertical-align: top;
+}
+.compare-table th.col-feature {
+  width: 220px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748B;
+  background: #F8FAFC;
+}
+.compare-table td.col-college {
+  font-size: 14px;
+  color: #0F172A;
+  background: #FFFFFF;
+  text-align: center;
+}
+.compare-table td.col-college:hover {
+  background: #FFFDF8;
+}
+.compare-college-header-card {
+  text-align: center;
+  padding: 12px;
+}
+.compare-card-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.compare-college-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 4px;
+}
+.compare-college-city {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 12px;
+}
+.compare-metric-highlight {
+  font-size: 18px;
+  font-weight: 800;
+  color: #059669;
+}
+.compare-roi-badge {
+  display: inline-block;
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 12.5px;
+}
+
+/* ==========================================================================
+   NEW FEATURES: SMART COLLEGE PREDICTOR & ADMISSION MATCH
+   ========================================================================== */
+.smart-predictor-card {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 20px;
+  padding: 36px;
+  color: #FFFFFF;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+  margin-bottom: 50px;
+}
+.predictor-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 28px;
+}
+.predictor-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+.predictor-title span {
+  color: #C9A96E;
+}
+.predictor-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+.predictor-field label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94A3B8;
+  margin-bottom: 6px;
+}
+.predictor-field select, .predictor-field input {
+  width: 100%;
+  background: #0B1020;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #FFFFFF;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.predictor-field select:focus, .predictor-field input:focus {
+  border-color: #C9A96E;
+}
+.btn-predict-submit {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #C9A96E 0%, #D8B97E 100%);
+  color: #0B1020;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(201, 169, 110, 0.35);
+  transition: transform 0.2s ease;
+}
+.btn-predict-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(201, 169, 110, 0.45);
+}
+
+/* Predictor Results */
+.predictor-results-container {
+  display: none;
+  margin-top: 30px;
+}
+.predictor-results-container.active {
+  display: block;
+}
+.predictor-tier-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+.predictor-tier-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E2E8F0;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.predictor-tier-btn.active {
+  background: #C9A96E;
+  color: #0B1020;
+  border-color: #C9A96E;
+}
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.tier-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.tier-card.safe { border-left: 4px solid #10B981; }
+.tier-card.target { border-left: 4px solid #F59E0B; }
+.tier-card.dream { border-left: 4px solid #EF4444; }
+
+/* ==========================================================================
+   NEW FEATURES: PLACEMENT TRANSPARENCY & SALARY STATS
+   ========================================================================== */
+.placements-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .placements-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.placement-stat-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: center;
+}
+.placement-stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #64748B;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.placement-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0F172A;
+}
+.placement-stat-value.green { color: #059669; }
+.placement-stat-sub {
+  font-size: 12px;
+  color: #94A3B8;
+  margin-top: 4px;
+}
+
+.salary-dist-container {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.salary-bar-stacked {
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.salary-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+.salary-segment:hover {
+  opacity: 0.9;
+}
+.seg-under5 { background: #94A3B8; width: 18%; }
+.seg-5to10 { background: #3B82F6; width: 52%; }
+.seg-10to20 { background: #10B981; width: 22%; }
+.seg-20plus { background: #F59E0B; width: 8%; }
+
+.recruiters-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.recruiter-chip {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1E293B;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   NEW FEATURES: AUTHENTIC STUDENT POV REVIEWS (5 PILLARS)
+   ========================================================================== */
+.pov-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.pov-pillar-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px;
+}
+.pov-pillar-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.pov-pillar-score {
+  color: #D97706;
+  font-weight: 800;
+}
+.pov-progress-track {
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.pov-progress-fill {
+  height: 100%;
+  background: #C9A96E;
+  border-radius: 999px;
+}
+
+/* Pros & Cons */
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .pros-cons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.pros-box {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 10px;
+  padding: 18px;
+}
+.cons-box {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  padding: 18px;
+}
+.pros-box h4 { color: #166534; font-size: 14px; font-weight: 800; margin-bottom: 10px; }
+.cons-box h4 { color: #991B1B; font-size: 14px; font-weight: 800; margin-bottom: 10px; }
+.pros-box ul, .cons-box ul {
+  padding-left: 20px;
+  font-size: 13px;
+  color: #334155;
+  margin: 0;
+}
+.pros-box li, .cons-box li {
+  margin-bottom: 6px;
+}
+
+

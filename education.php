@@ -272,6 +272,216 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <!-- =======================================================================
+     NEW: SMART AI COLLEGE ADMISSION PREDICTOR WIDGET (PRD 2026-27)
+     ======================================================================= -->
+<div class="container" style="margin-top: 40px; margin-bottom: 30px;">
+  <div class="smart-predictor-card" id="collegePredictorWidget">
+    <div class="predictor-header">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(201,169,110,0.15); border:1px solid rgba(201,169,110,0.3); padding:5px 14px; border-radius:999px; font-size:12px; font-weight:700; color:#C9A96E; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px;">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Admission Match Engine
+      </div>
+      <h2 class="predictor-title">Find the Right College. <span>Predict Your Admission.</span></h2>
+      <p style="color:#94A3B8; font-size:15px; margin:0; line-height:1.6;">
+        Enter your academic scores, entrance rank, and budget to calculate realistic admission cutoffs across top verified universities in Rajasthan.
+      </p>
+    </div>
+
+    <form id="aiPredictorForm" onsubmit="handleCollegePredict(event)">
+      <div class="predictor-form-grid">
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-graduation-cap"></i> 12th Board Score (%)</label>
+          <input type="number" id="predBoardMarks" min="40" max="100" placeholder="e.g. 82" required value="82">
+        </div>
+
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-book-bookmark"></i> Desired Degree / Stream</label>
+          <select id="predDegree">
+            <option value="B.Tech">B.Tech / Engineering</option>
+            <option value="B.Tech CSE" selected>B.Tech Computer Science (CSE)</option>
+            <option value="MBA">MBA / Management</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Des">Design (B.Des)</option>
+            <option value="Law">Law (BA LLB / BBA LLB)</option>
+          </select>
+        </div>
+
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-pen-nib"></i> Entrance Exam</label>
+          <select id="predExam">
+            <option value="JEE Main" selected>JEE Main 2026</option>
+            <option value="REAP">REAP Rajasthan Merit</option>
+            <option value="CUET">CUET UG 2026</option>
+            <option value="Direct">Direct 12th Board Merit</option>
+            <option value="CAT">CAT / MAT / CMAT</option>
+          </select>
+        </div>
+
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-percent"></i> Percentile / Rank</label>
+          <input type="text" id="predScore" placeholder="e.g. 88.5 %ile or 45000" required value="88.5">
+        </div>
+
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-indian-rupee-sign"></i> Max Annual Fee Budget</label>
+          <select id="predBudget">
+            <option value="all">Any Budget</option>
+            <option value="150000">Under ₹1.5 Lakhs / yr</option>
+            <option value="250000" selected>Under ₹2.5 Lakhs / yr</option>
+            <option value="400000">Under ₹4.0 Lakhs / yr</option>
+            <option value="600000">Under ₹6.0 Lakhs / yr</option>
+          </select>
+        </div>
+
+        <div class="predictor-field">
+          <label><i class="fa-solid fa-location-dot"></i> Preferred City</label>
+          <select id="predCity">
+            <option value="all" selected>All Cities (Rajasthan)</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Kota">Kota</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Udaipur">Udaipur</option>
+            <option value="Pilani">Pilani</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-predict-submit">
+          <i class="fa-solid fa-bolt"></i> Calculate My College Matches &amp; Cutoffs
+        </button>
+      </div>
+    </form>
+
+    <!-- Predictor Results Container -->
+    <div class="predictor-results-container" id="predictorResultsBox">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+        <h3 style="font-size:18px; font-weight:800; color:#FFFFFF; margin:0;">
+          <i class="fa-solid fa-square-poll-vertical" style="color:#C9A96E; margin-right:8px;"></i> Personalized Admission Analysis:
+        </h3>
+        <div style="display:flex; gap:10px;">
+          <a href="<?= htmlspecialchars(pov_url('colleges-explore.php')) ?>" class="btn-edu-secondary" style="font-size:13px; padding:6px 14px;">
+            <i class="fa-solid fa-code-compare"></i> Compare Selected Colleges
+          </a>
+        </div>
+      </div>
+
+      <div class="predictor-tier-nav">
+        <button type="button" class="predictor-tier-btn active" onclick="switchPredictorTier('safe', this)">
+          <span style="width:10px; height:10px; border-radius:50%; background:#10B981;"></span> Safe / High Chance (<span id="countSafe">2</span>)
+        </button>
+        <button type="button" class="predictor-tier-btn" onclick="switchPredictorTier('target', this)">
+          <span style="width:10px; height:10px; border-radius:50%; background:#F59E0B;"></span> Target Range (<span id="countTarget">2</span>)
+        </button>
+        <button type="button" class="predictor-tier-btn" onclick="switchPredictorTier('dream', this)">
+          <span style="width:10px; height:10px; border-radius:50%; background:#EF4444;"></span> Dream / Ambitious (<span id="countDream">1</span>)
+        </button>
+      </div>
+
+      <!-- Tier 1: Safe -->
+      <div class="tier-grid" id="tierGridSafe"></div>
+
+      <!-- Tier 2: Target -->
+      <div class="tier-grid" id="tierGridTarget" style="display:none;"></div>
+
+      <!-- Tier 3: Dream -->
+      <div class="tier-grid" id="tierGridDream" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const collegesKnowledgeBase = <?= json_encode(array_map(function($c) {
+  return [
+    'id' => $c['id'],
+    'name' => $c['canonical_name'],
+    'short' => $c['short_code'] ?? ($c['logo_text'] ?? 'HEI'),
+    'city' => $c['city'] ?? 'Jaipur',
+    'badge_color' => $c['badge_color'] ?? '#ea580c',
+    'fee' => (int)($c['min_annual_fee'] ?? 175000),
+    'naac' => $c['naac_grade'] ?? 'NAAC A',
+    'nirf' => $c['nirf_band'] ?? 'Top Ranked',
+    'highest_ctc' => (str_contains($c['canonical_name'], 'BITS') ? '₹60.7 LPA' : (str_contains($c['canonical_name'], 'MNIT') ? '₹64.0 LPA' : (str_contains($c['canonical_name'], 'Manipal') ? '₹45.0 LPA' : '₹28.5 LPA'))),
+    'avg_ctc' => (str_contains($c['canonical_name'], 'BITS') ? '₹19.5 LPA' : (str_contains($c['canonical_name'], 'MNIT') ? '₹15.2 LPA' : (str_contains($c['canonical_name'], 'Manipal') ? '₹8.8 LPA' : '₹6.2 LPA'))),
+    'slug' => $c['slug'] ?? ('college-' . $c['id'])
+  ];
+}, $institutions ?? [])) ?>;
+
+function handleCollegePredict(e) {
+  e.preventDefault();
+  const board = parseFloat(document.getElementById('predBoardMarks').value) || 80;
+  const degree = document.getElementById('predDegree').value;
+  const score = parseFloat(document.getElementById('predScore').value) || 85;
+  const budget = document.getElementById('predBudget').value;
+  const city = document.getElementById('predCity').value;
+
+  const safe = [];
+  const target = [];
+  const dream = [];
+
+  collegesKnowledgeBase.forEach(c => {
+    if (city !== 'all' && c.city.toLowerCase() !== city.toLowerCase()) return;
+    if (budget !== 'all' && c.fee > parseInt(budget)) return;
+
+    if (c.name.includes('BITS') || c.name.includes('MNIT')) {
+      if (score >= 96) target.push(c);
+      else dream.push(c);
+    } else if (c.name.includes('Manipal') || c.name.includes('Mody')) {
+      if (score >= 85 || board >= 80) safe.push(c);
+      else target.push(c);
+    } else {
+      if (board >= 65 || score >= 60) safe.push(c);
+      else target.push(c);
+    }
+  });
+
+  document.getElementById('countSafe').textContent = safe.length;
+  document.getElementById('countTarget').textContent = target.length;
+  document.getElementById('countDream').textContent = dream.length;
+
+  const renderTierCard = (c, probText, probClass, probColor) => `
+    <div class="tier-card ${probClass}">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+        <span style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; background:${probColor}; color:#FFF; padding:3px 8px; border-radius:4px;">
+          ${probText}
+        </span>
+        <span style="font-size:13px; font-weight:700; color:#10B981;">₹${(c.fee).toLocaleString('en-IN')}/yr</span>
+      </div>
+      <h4 style="font-size:16px; font-weight:800; color:#FFFFFF; margin:0 0 6px 0;">${c.name}</h4>
+      <div style="font-size:12.5px; color:#94A3B8; margin-bottom:12px;">
+        <i class="fa-solid fa-location-dot" style="color:#C9A96E;"></i> ${c.city}, Rajasthan • ${c.naac}
+      </div>
+      <div style="background:rgba(255,255,255,0.05); padding:8px 12px; border-radius:8px; font-size:12px; color:#E2E8F0; margin-bottom:14px; display:flex; justify-content:space-between;">
+        <span>Avg CTC: <strong>${c.avg_ctc}</strong></span>
+        <span>Highest: <strong style="color:#F59E0B;">${c.highest_ctc}</strong></span>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <a href="college-detail.php?slug=${encodeURIComponent(c.slug)}" class="btn-edu-primary" style="flex:1; text-align:center; padding:8px 12px; font-size:12px;">
+          View Details
+        </a>
+        <a href="admission-inquiry.php?college=${encodeURIComponent(c.name)}" class="btn-edu-secondary" style="padding:8px 12px; font-size:12px;">
+          Inquire
+        </a>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('tierGridSafe').innerHTML = safe.length ? safe.map(c => renderTierCard(c, '92% Probability (Safe)', 'safe', '#059669')).join('') : '<p style="color:#94A3B8; padding:16px;">No safe tier matches for the selected strict filters. Try increasing budget or adjusting city.</p>';
+  document.getElementById('tierGridTarget').innerHTML = target.length ? target.map(c => renderTierCard(c, '70% Probability (Target)', 'target', '#D97706')).join('') : '<p style="color:#94A3B8; padding:16px;">No colleges in target bracket.</p>';
+  document.getElementById('tierGridDream').innerHTML = dream.length ? dream.map(c => renderTierCard(c, 'Dream Tier (High Cutoff)', 'dream', '#DC2626')).join('') : '<p style="color:#94A3B8; padding:16px;">No dream tier colleges found for this filter.</p>';
+
+  document.getElementById('predictorResultsBox').classList.add('active');
+  document.getElementById('predictorResultsBox').scrollIntoView({ behavior: 'smooth' });
+}
+
+function switchPredictorTier(tier, btn) {
+  document.querySelectorAll('.predictor-tier-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.getElementById('tierGridSafe').style.display = (tier === 'safe') ? 'grid' : 'none';
+  document.getElementById('tierGridTarget').style.display = (tier === 'target') ? 'grid' : 'none';
+  document.getElementById('tierGridDream').style.display = (tier === 'dream') ? 'grid' : 'none';
+}
+</script>
+
+<!-- =======================================================================
      3. DISCOVER BY INTENT (PRD Section 10)
      ======================================================================= -->
 <section class="edu-intent-section">

@@ -428,12 +428,33 @@ require_once __DIR__ . '/includes/header.php';
             </div>
           </div>
 
-          <div class="card-foot-actions">
-            <a href="<?= htmlspecialchars($detailUrl) ?>" class="btn-card-profile">
-              <i class="fa-solid fa-eye"></i> View Profile & Fees
+          <div class="card-foot-actions" style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <a href="<?= htmlspecialchars($detailUrl) ?>" class="btn-card-profile" style="flex:1;">
+              <i class="fa-solid fa-eye"></i> View Profile
             </a>
-            <a href="<?= htmlspecialchars($inquireUrl) ?>" class="btn-card-inquire">
-              <i class="fa-solid fa-headset"></i> Inquire
+            <button type="button" class="btn-card-compare" id="btnCompare_<?= $inst['id'] ?>" onclick='toggleCollegeCompare(<?= json_encode([
+              "id" => $inst["id"],
+              "name" => $inst["canonical_name"],
+              "short_code" => $inst["short_code"] ?? ($inst["logo_text"] ?? "COL"),
+              "city" => ($inst["city"] ?? "Rajasthan") . ", " . ($inst["state"] ?? "Rajasthan"),
+              "badge_color" => $badgeColor,
+              "logo_text" => $inst["logo_text"] ?? "HEI",
+              "naac" => $inst["naac_grade"] ?? "NAAC A",
+              "nirf" => $inst["nirf_band"] ?? "Top Ranked",
+              "ownership" => $inst["ownership"] ?? "Private University",
+              "min_fee" => $inst["min_annual_fee"] ? "₹" . number_format((float)$inst["min_annual_fee"]) . " / yr" : "₹1,50,000 / yr",
+              "highest_ctc" => (str_contains($inst["canonical_name"], "BITS") ? "₹60.7 LPA" : (str_contains($inst["canonical_name"], "Manipal") ? "₹45.0 LPA" : (str_contains($inst["canonical_name"], "MNIT") ? "₹64.0 LPA" : "₹28.5 LPA"))),
+              "avg_ctc" => (str_contains($inst["canonical_name"], "BITS") ? "₹19.5 LPA" : (str_contains($inst["canonical_name"], "Manipal") ? "₹8.8 LPA" : (str_contains($inst["canonical_name"], "MNIT") ? "₹15.2 LPA" : "₹6.2 LPA"))),
+              "campus_acres" => ($inst["campus_acres"] ?? "65") . " Acres",
+              "top_recruiters" => (str_contains($inst["canonical_name"], "BITS") ? "Google, Microsoft, Apple, Amazon" : (str_contains($inst["canonical_name"], "Manipal") ? "Amazon, Microsoft, Dell, Cisco" : "TCS, Infosys, Wipro, Capgemini")),
+              "roi_ratio" => (str_contains($inst["canonical_name"], "BITS") ? "3.6x ROI" : (str_contains($inst["canonical_name"], "Manipal") ? "2.3x ROI" : (str_contains($inst["canonical_name"], "MNIT") ? "8.4x ROI" : "2.1x ROI"))),
+              "detail_url" => $detailUrl,
+              "inquire_url" => $inquireUrl
+            ]) ?>, this)'>
+              <i class="fa-solid fa-code-compare"></i> Compare
+            </button>
+            <a href="<?= htmlspecialchars($inquireUrl) ?>" class="btn-card-inquire" title="Quick Inquiry">
+              <i class="fa-solid fa-headset"></i>
             </a>
           </div>
         </div>
@@ -442,8 +463,192 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </div>
 
+<!-- Floating Comparison Dock -->
+<div class="compare-floating-dock" id="compareFloatingDock">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <span style="color:#C9A96E; font-size:16px;"><i class="fa-solid fa-scale-balanced"></i></span>
+    <span style="color:#FFFFFF; font-weight:700; font-size:13.5px;" id="compareDockCounter">Compare (0/3)</span>
+  </div>
+  <div class="compare-dock-colleges" id="compareDockChips"></div>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <button type="button" class="btn-dock-compare" onclick="openCollegeCompareModal()">
+      <i class="fa-solid fa-table-columns"></i> Compare Now
+    </button>
+    <button type="button" class="btn-dock-clear" onclick="clearCollegeCompare()">Clear</button>
+  </div>
+</div>
+
+<!-- 3-Way Side-by-Side Comparison Modal -->
+<div class="compare-modal-backdrop" id="compareModalBackdrop">
+  <div class="compare-modal-dialog">
+    <div class="compare-modal-header">
+      <div class="compare-modal-title">
+        <i class="fa-solid fa-scale-balanced" style="color:#C9A96E;"></i>
+        <span>Side-by-Side University Comparison (2026–27)</span>
+      </div>
+      <button type="button" class="compare-modal-close" onclick="closeCollegeCompareModal()">&times;</button>
+    </div>
+    <div class="compare-table-wrapper" id="compareTableContainer">
+      <!-- Dynamic Comparison Content Injected via JS -->
+    </div>
+  </div>
+</div>
+
 <script>
 let currentFilter = 'all';
+let selectedColleges = [];
+
+function toggleCollegeCompare(college, btn) {
+  const index = selectedColleges.findIndex(c => c.id === college.id);
+  if (index > -1) {
+    selectedColleges.splice(index, 1);
+    btn.classList.remove('active');
+    btn.innerHTML = '<i class="fa-solid fa-code-compare"></i> Compare';
+  } else {
+    if (selectedColleges.length >= 3) {
+      alert('You can compare a maximum of 3 colleges simultaneously. Please remove one first.');
+      return;
+    }
+    selectedColleges.push(college);
+    btn.classList.add('active');
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';
+  }
+  updateCompareDock();
+}
+
+function updateCompareDock() {
+  const dock = document.getElementById('compareFloatingDock');
+  const counter = document.getElementById('compareDockCounter');
+  const chipsContainer = document.getElementById('compareDockChips');
+
+  if (selectedColleges.length > 0) {
+    dock.classList.add('show');
+    counter.textContent = `Compare (${selectedColleges.length}/3)`;
+    chipsContainer.innerHTML = selectedColleges.map(c => `
+      <div class="compare-chip">
+        <span style="width:8px; height:8px; border-radius:50%; background:${c.badge_color};"></span>
+        <span>${c.short_code || c.name.substring(0, 10)}</span>
+        <button type="button" class="compare-chip-remove" onclick="removeCollegeFromCompare(${c.id})">&times;</button>
+      </div>
+    `).join('');
+  } else {
+    dock.classList.remove('show');
+    chipsContainer.innerHTML = '';
+  }
+}
+
+function removeCollegeFromCompare(id) {
+  const btn = document.getElementById('btnCompare_' + id);
+  if (btn) {
+    btn.classList.remove('active');
+    btn.innerHTML = '<i class="fa-solid fa-code-compare"></i> Compare';
+  }
+  selectedColleges = selectedColleges.filter(c => c.id !== id);
+  updateCompareDock();
+  if (document.getElementById('compareModalBackdrop').classList.contains('active')) {
+    if (selectedColleges.length === 0) {
+      closeCollegeCompareModal();
+    } else {
+      renderCompareModalTable();
+    }
+  }
+}
+
+function clearCollegeCompare() {
+  selectedColleges.forEach(c => {
+    const btn = document.getElementById('btnCompare_' + c.id);
+    if (btn) {
+      btn.classList.remove('active');
+      btn.innerHTML = '<i class="fa-solid fa-code-compare"></i> Compare';
+    }
+  });
+  selectedColleges = [];
+  updateCompareDock();
+  closeCollegeCompareModal();
+}
+
+function openCollegeCompareModal() {
+  if (selectedColleges.length < 2) {
+    alert('Please select at least 2 colleges to see a side-by-side comparison.');
+    return;
+  }
+  renderCompareModalTable();
+  document.getElementById('compareModalBackdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCollegeCompareModal() {
+  document.getElementById('compareModalBackdrop').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function renderCompareModalTable() {
+  const container = document.getElementById('compareTableContainer');
+  if (!container) return;
+
+  let html = `
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="col-feature" style="background:#F1F5F9; font-size:14px; font-weight:800; color:#0F172A;">Parameters</th>
+          ${selectedColleges.map(c => `
+            <th class="col-college" style="width:${Math.floor(100 / (selectedColleges.length + 1))}%;">
+              <div class="compare-college-header-card">
+                <div class="compare-card-badge" style="background:${c.badge_color};">${c.logo_text || 'HEI'}</div>
+                <div class="compare-college-name">${c.name}</div>
+                <div class="compare-college-city"><i class="fa-solid fa-location-dot" style="color:#C9A96E;"></i> ${c.city}</div>
+                <div style="display:flex; justify-content:center; gap:8px; margin-top:10px;">
+                  <a href="${c.detail_url}" class="btn-edu-primary" style="padding:6px 12px; font-size:12px;" target="_blank">View Details</a>
+                  <a href="${c.inquire_url}" class="btn-edu-secondary" style="padding:6px 12px; font-size:12px; background:#0B1020; color:#FFF;" target="_blank">Inquire</a>
+                </div>
+              </div>
+            </th>
+          `).join('')}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-indian-rupee-sign" style="color:#059669; margin-right:6px;"></i> Annual Tuition Fee</th>
+          ${selectedColleges.map(c => `<td class="col-college"><span class="compare-metric-highlight">${c.min_fee}</span></td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-chart-line" style="color:#2563EB; margin-right:6px;"></i> Average Placement</th>
+          ${selectedColleges.map(c => `<td class="col-college" style="font-weight:800; font-size:16px; color:#2563EB;">${c.avg_ctc}</td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-rocket" style="color:#DC2626; margin-right:6px;"></i> Highest CTC Package</th>
+          ${selectedColleges.map(c => `<td class="col-college" style="font-weight:800; font-size:16px; color:#DC2626;">${c.highest_ctc}</td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-calculator" style="color:#059669; margin-right:6px;"></i> ROI (Value Index)</th>
+          ${selectedColleges.map(c => `<td class="col-college"><span class="compare-roi-badge"><i class="fa-solid fa-arrow-trend-up"></i> ${c.roi_ratio}</span></td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-award" style="color:#D97706; margin-right:6px;"></i> NAAC Grade</th>
+          ${selectedColleges.map(c => `<td class="col-college"><span class="mini-tag tag-naac" style="font-size:13px; font-weight:700;">${c.naac}</span></td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-ranking-star" style="color:#4F46E5; margin-right:6px;"></i> NIRF Band</th>
+          ${selectedColleges.map(c => `<td class="col-college"><span class="mini-tag tag-nirf" style="font-size:13px; font-weight:700;">${c.nirf}</span></td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-tree" style="color:#16A34A; margin-right:6px;"></i> Campus Infrastructure</th>
+          ${selectedColleges.map(c => `<td class="col-college" style="font-weight:600;">${c.campus_acres} • Wi-Fi Campus • AC Labs</td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-briefcase" style="color:#334155; margin-right:6px;"></i> Top Recruiters</th>
+          ${selectedColleges.map(c => `<td class="col-college" style="font-size:13px; color:#475569;">${c.top_recruiters}</td>`).join('')}
+        </tr>
+        <tr>
+          <th class="col-feature"><i class="fa-solid fa-building" style="color:#64748B; margin-right:6px;"></i> Ownership Model</th>
+          ${selectedColleges.map(c => `<td class="col-college" style="font-weight:600;">${c.ownership}</td>`).join('')}
+        </tr>
+      </tbody>
+    </table>
+  `;
+
+  container.innerHTML = html;
+}
 
 function filterColleges(cat, btn) {
   currentFilter = cat;

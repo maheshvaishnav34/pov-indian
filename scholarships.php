@@ -385,8 +385,76 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </section>
 
+  <!-- 1-Minute Smart Scholarship Eligibility Wizard -->
+  <div class="container" style="margin-bottom: 30px;">
+    <div style="background: linear-gradient(135deg, #111827 0%, #1e293b 100%); border: 1px solid rgba(201, 169, 110, 0.35); border-radius: 16px; padding: 28px; color: #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+        <div>
+          <span style="font-size:12px; font-weight:700; color:#C9A96E; text-transform:uppercase; letter-spacing:0.5px; background:rgba(201,169,110,0.15); padding:4px 10px; border-radius:6px;">
+            <i class="fa-solid fa-calculator"></i> 1-Minute Eligibility Matcher
+          </span>
+          <h2 style="font-size:22px; font-weight:800; color:#FFFFFF; margin:8px 0 4px 0;">Find Eligible Scholarships &amp; Fee Waivers</h2>
+          <p style="color:#94A3B8; font-size:13.5px; margin:0;">Calculate your eligible state, central, and private university scholarship schemes.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; background:rgba(255,255,255,0.05); padding:18px; border-radius:12px;">
+        <div>
+          <label style="font-size:12px; font-weight:700; color:#94A3B8; text-transform:uppercase; display:block; margin-bottom:6px;">12th / Qualifying Score</label>
+          <select id="wizMarks" style="width:100%; background:#0B1020; border:1px solid rgba(255,255,255,0.2); color:#FFF; padding:9px 12px; border-radius:8px; font-size:13.5px;" onchange="calculateScholarshipEligibility()">
+            <option value="90">90% and Above (Top Tier)</option>
+            <option value="80" selected>80% - 89% (High Merit)</option>
+            <option value="70">70% - 79% (Standard Merit)</option>
+            <option value="60">60% - 69%</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size:12px; font-weight:700; color:#94A3B8; text-transform:uppercase; display:block; margin-bottom:6px;">Family Annual Income</label>
+          <select id="wizIncome" style="width:100%; background:#0B1020; border:1px solid rgba(255,255,255,0.2); color:#FFF; padding:9px 12px; border-radius:8px; font-size:13.5px;" onchange="calculateScholarshipEligibility()">
+            <option value="under2.5" selected>Under ₹2.5 Lakhs (BPL / Full Means)</option>
+            <option value="under8">₹2.5 Lakhs - ₹8 Lakhs (Non-Creamy)</option>
+            <option value="above8">Above ₹8 Lakhs</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size:12px; font-weight:700; color:#94A3B8; text-transform:uppercase; display:block; margin-bottom:6px;">Category / Gender</label>
+          <select id="wizCategory" style="width:100%; background:#0B1020; border:1px solid rgba(255,255,255,0.2); color:#FFF; padding:9px 12px; border-radius:8px; font-size:13.5px;" onchange="calculateScholarshipEligibility()">
+            <option value="All" selected>General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC/ST">SC / ST</option>
+            <option value="EWS">EWS</option>
+            <option value="Girls in STEM">Girl Candidate (Girls in STEM)</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size:12px; font-weight:700; color:#94A3B8; text-transform:uppercase; display:block; margin-bottom:6px;">State Domicile</label>
+          <select id="wizState" style="width:100%; background:#0B1020; border:1px solid rgba(255,255,255,0.2); color:#FFF; padding:9px 12px; border-radius:8px; font-size:13.5px;" onchange="calculateScholarshipEligibility()">
+            <option value="Rajasthan" selected>Rajasthan Domicile</option>
+            <option value="Other">Other State</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Eligibility Output Banner -->
+      <div id="wizResultBanner" style="margin-top:16px; background:rgba(16,185,129,0.15); border:1px solid #10B981; border-radius:10px; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <div>
+          <span style="font-size:12px; font-weight:700; color:#34D399; text-transform:uppercase;">Eligible Financial Aid &amp; Waivers</span>
+          <div style="font-size:18px; font-weight:800; color:#FFFFFF; margin-top:2px;" id="wizBenefitText">
+            Up to ₹50,000 / Year + 50% Tuition Fee Waiver
+          </div>
+        </div>
+        <button type="button" class="btn-scholar-inquire" onclick="scrollToScholarshipsList()">
+          <i class="fa-solid fa-list-check"></i> View Matching Schemes
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scholarships Grid -->
-  <div class="container">
+  <div class="container" id="scholarshipsListSection">
     <div class="scholar-cards-grid" id="scholarGridContainer">
       <?php foreach ($scholarships as $sch): 
         $target = htmlspecialchars($sch['target_group'] ?? 'Undergraduate');
@@ -435,7 +503,7 @@ require_once __DIR__ . '/includes/header.php';
 <script>
 function filterScholarships(category, btn) {
   document.querySelectorAll('.scholar-filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
 
   const cards = document.querySelectorAll('.scholar-card');
   cards.forEach(card => {
@@ -446,6 +514,42 @@ function filterScholarships(category, btn) {
       card.style.display = 'none';
     }
   });
+}
+
+function calculateScholarshipEligibility() {
+  const marks = parseInt(document.getElementById('wizMarks').value) || 80;
+  const income = document.getElementById('wizIncome').value;
+  const category = document.getElementById('wizCategory').value;
+  const state = document.getElementById('wizState').value;
+  const bannerText = document.getElementById('wizBenefitText');
+
+  let benefit = 'Up to ₹25,000 / Year (State Merit Scheme)';
+  let targetFilter = 'Merit';
+
+  if (category === 'Girls in STEM') {
+    benefit = '₹50,000 / Year (Pragati Scholarship for Girls in Tech + 50% Fee Waiver)';
+    targetFilter = 'Girls in STEM';
+  } else if (income === 'under2.5') {
+    if (marks >= 80) {
+      benefit = '100% Tuition Fee Waiver + ₹50,000 / Year (Post-Matric / NSP Scheme)';
+    } else {
+      benefit = 'Up to 75% Tuition Fee Waiver (Means-cum-Merit Scholarship)';
+    }
+    targetFilter = 'Means';
+  } else if (marks >= 90) {
+    benefit = '100% University Tuition Waiver (Presidential Academic Fellowship)';
+    targetFilter = 'Merit';
+  } else if (state === 'Rajasthan') {
+    benefit = '₹20,000 to ₹40,000 / Year (Mukhyamantri Uchha Shiksha Scheme)';
+    targetFilter = 'State';
+  }
+
+  bannerText.textContent = benefit;
+  filterScholarships(targetFilter, null);
+}
+
+function scrollToScholarshipsList() {
+  document.getElementById('scholarshipsListSection').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 
