@@ -53,69 +53,69 @@ if (!empty($eduInstitutions)) {
   </div>
 
   <!-- 1. KPI Top Summary Cards -->
-  <div class="metrics-grid" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 24px;">
-    <div class="metric-card">
-      <div class="metric-header">
-        <span class="metric-label">Colleges & Universities</span>
-        <div class="metric-icon" style="background:#FFF3E8; color:#D97746;">
-          <i class="fa-solid fa-building-columns"></i>
+  <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+    <div class="stat-card orange" onclick="switchEduSubtab('institutions')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px;">
+      <div>
+        <div class="stat-title" style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Colleges & Universities</div>
+        <div class="stat-value" style="font-size:30px; font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:6px;"><?= count($eduInstitutions ?? []) ?></div>
+        <div class="stat-desc" style="font-size:12px; font-weight:600; color:#D97746; display:flex; align-items:center; gap:6px;">
+          <i class="fa-solid fa-shield-halved"></i> 100% AISHE / UGC
         </div>
       </div>
-      <div class="metric-value"><?= count($eduInstitutions ?? []) ?></div>
-      <div class="metric-change positive">
-        <i class="fa-solid fa-shield-halved"></i> 100% AISHE / UGC Verified
+      <div class="stat-icon-wrap" style="width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:#FFF3E8; color:#D97746; flex-shrink:0;">
+        <i class="fa-solid fa-building-columns"></i>
       </div>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <span class="metric-label">2026–27 Programs</span>
-        <div class="metric-icon" style="background:#EBF5F0; color:#237A57;">
-          <i class="fa-solid fa-graduation-cap"></i>
+    <div class="stat-card green" onclick="switchEduSubtab('offerings')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px;">
+      <div>
+        <div class="stat-title" style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">2026–27 Programs</div>
+        <div class="stat-value" style="font-size:30px; font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:6px;"><?= count($allEduOfferings) ?></div>
+        <div class="stat-desc" style="font-size:12px; font-weight:600; color:#16A34A; display:flex; align-items:center; gap:6px;">
+          <i class="fa-solid fa-calendar-check"></i> Live Seat Intake
         </div>
       </div>
-      <div class="metric-value"><?= count($allEduOfferings) ?></div>
-      <div class="metric-change positive">
-        <i class="fa-solid fa-calendar-check"></i> Live Seat Intake
+      <div class="stat-icon-wrap" style="width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:#EBF5F0; color:#16A34A; flex-shrink:0;">
+        <i class="fa-solid fa-graduation-cap"></i>
       </div>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <span class="metric-label">Student Inquiries</span>
-        <div class="metric-icon" style="background:#EFF6FF; color:#2563EB;">
-          <i class="fa-solid fa-users-line"></i>
+    <div class="stat-card blue" onclick="switchEduSubtab('leads')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px;">
+      <div>
+        <div class="stat-title" style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Student Inquiries</div>
+        <div class="stat-value" style="font-size:30px; font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:6px;"><?= count($eduLeads ?? []) ?></div>
+        <div class="stat-desc" style="font-size:12px; font-weight:600; color:#2563EB; display:flex; align-items:center; gap:6px;">
+          <i class="fa-solid fa-user-plus"></i> Verified Lead Ingestion
         </div>
       </div>
-      <div class="metric-value"><?= count($eduLeads ?? []) ?></div>
-      <div class="metric-change positive">
-        <i class="fa-solid fa-user-plus"></i> Verified Lead Ingestion
+      <div class="stat-icon-wrap" style="width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:#EFF6FF; color:#2563EB; flex-shrink:0;">
+        <i class="fa-solid fa-users-line"></i>
       </div>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <span class="metric-label">Entrance Exams (2026)</span>
-        <div class="metric-icon" style="background:#FEF3C7; color:#D97706;">
-          <i class="fa-solid fa-clipboard-list"></i>
+    <div class="stat-card" onclick="switchEduSubtab('exams')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px; border-bottom:3px solid #D97706;">
+      <div>
+        <div class="stat-title" style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Entrance Exams (2026)</div>
+        <div class="stat-value" style="font-size:30px; font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:6px;"><?= count($eduExams ?? []) ?></div>
+        <div class="stat-desc" style="font-size:12px; font-weight:600; color:#D97706; display:flex; align-items:center; gap:6px;">
+          <i class="fa-solid fa-bell"></i> NTA / State Live Hub
         </div>
       </div>
-      <div class="metric-value"><?= count($eduExams ?? []) ?></div>
-      <div class="metric-change positive">
-        <i class="fa-solid fa-bell"></i> NTA / State Live Hub
+      <div class="stat-icon-wrap" style="width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:#FEF3C7; color:#D97706; flex-shrink:0;">
+        <i class="fa-solid fa-clipboard-list"></i>
       </div>
     </div>
 
-    <div class="metric-card">
-      <div class="metric-header">
-        <span class="metric-label">Scholarships Tracked</span>
-        <div class="metric-icon" style="background:#F5F3FF; color:#7C3AED;">
-          <i class="fa-solid fa-hand-holding-dollar"></i>
+    <div class="stat-card purple" onclick="switchEduSubtab('scholarships')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px;">
+      <div>
+        <div class="stat-title" style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Scholarships Tracked</div>
+        <div class="stat-value" style="font-size:30px; font-weight:800; color:var(--ink); line-height:1.1; margin-bottom:6px;"><?= count($eduScholarships ?? []) ?></div>
+        <div class="stat-desc" style="font-size:12px; font-weight:600; color:#7C3AED; display:flex; align-items:center; gap:6px;">
+          <i class="fa-solid fa-gift"></i> Merit & Means Registry
         </div>
       </div>
-      <div class="metric-value"><?= count($eduScholarships ?? []) ?></div>
-      <div class="metric-change positive">
-        <i class="fa-solid fa-gift"></i> Merit & Means Registry
+      <div class="stat-icon-wrap" style="width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:#F5F3FF; color:#7C3AED; flex-shrink:0;">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
       </div>
     </div>
   </div>
