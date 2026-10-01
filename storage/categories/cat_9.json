@@ -1,0 +1,9 @@
+{
+  "id": 9,
+  "name": "Legal & Consulting Firms",
+  "count": "640+",
+  "slug": "legal",
+  "icon": "legal.svg",
+  "desc": "Law firms, consultants, and professional advisors.",
+  "show_in_signup": false
+}

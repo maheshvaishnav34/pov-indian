@@ -1,0 +1,16 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-25T07:05:23+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260925_070522_09dd4d",
+        "full_name": "Do",
+        "email": "admieiioeun@povindian.com",
+        "phone": "",
+        "interests": [
+            "Colleges & Universities"
+        ],
+        "role": "user",
+        "folder": "user_admieiioeun_povindian_com_eeb602"
+    }
+}

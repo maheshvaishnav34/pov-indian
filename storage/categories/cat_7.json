@@ -1,0 +1,9 @@
+{
+  "id": 7,
+  "name": "Healthcare & Hospitals",
+  "count": "1,480+",
+  "slug": "healthcare",
+  "icon": "hospital.svg",
+  "desc": "Trusted hospitals, clinics, and healthcare providers.",
+  "show_in_signup": false
+}

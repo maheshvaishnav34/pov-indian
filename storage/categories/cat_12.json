@@ -1,0 +1,9 @@
+{
+  "id": 12,
+  "name": "Health & Beauty",
+  "count": "1,720+",
+  "slug": "beauty",
+  "icon": "health-beauty.svg",
+  "desc": "Salons, spas, and beauty studios offering authentic treatments.",
+  "show_in_signup": false
+}

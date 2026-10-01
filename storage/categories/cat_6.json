@@ -1,0 +1,9 @@
+{
+  "id": 6,
+  "name": "Tourism & Travel",
+  "count": "1,560+",
+  "slug": "tourism",
+  "icon": "cars.svg",
+  "desc": "Tour operators, guides, and authentic travel experiences.",
+  "show_in_signup": false
+}

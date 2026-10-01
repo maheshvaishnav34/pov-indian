@@ -1,0 +1,14 @@
+{
+    "id": 6,
+    "img": "wellness_01.jpg",
+    "avatar": "emma.webp",
+    "cat": "Wellness & Ayurveda",
+    "cat_slug": "wellness",
+    "rating": "5",
+    "title": "Ayurveda Wellness Retreat",
+    "loc": "Kozhikode, Kerala",
+    "phone": "+91 97654 32100",
+    "price": "₹3,500 – ₹12,000",
+    "badge": "",
+    "desc": "Doctor-supervised therapies, yoga sessions, and sattvic meals in a calm Kerala setting."
+}

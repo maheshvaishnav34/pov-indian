@@ -1,0 +1,9 @@
+{
+  "id": 5,
+  "name": "Real Estate",
+  "count": "1,120+",
+  "slug": "real-estate",
+  "icon": "home-service.svg",
+  "desc": "Property listings with verified information.",
+  "show_in_signup": false
+}

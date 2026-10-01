@@ -1,0 +1,17 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T11:51:39+00:00",
+    "ip": "",
+    "fields": {
+        "user_id": "usr_20260924_115138_6eb9bd",
+        "full_name": "Rahul Sharma",
+        "email": "rahul@example.com",
+        "phone": "",
+        "interests": [
+            "Tourism",
+            "Culture"
+        ],
+        "role": "user",
+        "folder": "user_rahul_example_com_c20bd6"
+    }
+}

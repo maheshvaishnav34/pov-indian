@@ -1,0 +1,10 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T06:17:04+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "full_name": "admin",
+        "email": "admin@povindian.com",
+        "interests": []
+    }
+}

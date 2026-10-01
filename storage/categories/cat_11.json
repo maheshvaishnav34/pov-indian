@@ -1,0 +1,9 @@
+{
+  "id": 11,
+  "name": "Auto Services",
+  "count": "1,310+",
+  "slug": "auto",
+  "icon": "auto-services.svg",
+  "desc": "Car care, repairs, detailing, and automotive services.",
+  "show_in_signup": false
+}

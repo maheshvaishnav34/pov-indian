@@ -1,0 +1,17 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-25T05:33:07+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260925_053307_0af387",
+        "full_name": "rfkkrfr",
+        "email": "asreerdjs@gmail.com",
+        "phone": "",
+        "interests": [
+            "Restaurants & Cafés",
+            "Colleges & Universities"
+        ],
+        "role": "user",
+        "folder": "user_asreerdjs_gmail_com_0a6dbb"
+    }
+}

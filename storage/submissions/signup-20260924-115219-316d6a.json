@@ -1,0 +1,17 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T11:52:19+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260924_115219_54ae2d",
+        "full_name": "Aarav Patel",
+        "email": "aarav@example.com",
+        "phone": "",
+        "interests": [
+            "Tourism",
+            "Education"
+        ],
+        "role": "user",
+        "folder": "user_aarav_example_com_013853"
+    }
+}

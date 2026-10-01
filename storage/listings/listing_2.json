@@ -1,0 +1,14 @@
+{
+    "id": 2,
+    "img": "realestate_01.webp",
+    "avatar": "james.webp",
+    "cat": "Real Estate",
+    "cat_slug": "real-estate",
+    "rating": "4",
+    "title": "Verified 3BHK in Whitefield",
+    "loc": "Bangalore, Karnataka",
+    "phone": "+91 99887 66554",
+    "price": "₹1.05 Cr",
+    "badge": "",
+    "desc": "Spacious family apartment close to IT parks, schools, and everyday conveniences in Whitefield."
+}

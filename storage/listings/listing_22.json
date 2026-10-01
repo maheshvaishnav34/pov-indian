@@ -1,0 +1,14 @@
+{
+    "id": 22,
+    "img": "beauty_02.jpg",
+    "avatar": "lisa.webp",
+    "cat": "Health & Beauty",
+    "cat_slug": "beauty",
+    "rating": "4",
+    "title": "Skin & Wellness Studio",
+    "loc": "Hyderabad, Telangana",
+    "phone": "+91 98765 60602",
+    "price": "From ₹1,200",
+    "badge": "",
+    "desc": "Dermatology-informed facials and wellness add-ons with appointment booking."
+}

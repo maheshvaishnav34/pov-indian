@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Hotels & Accommodations",
+  "count": "1,240+",
+  "slug": "hotels",
+  "icon": "event.svg",
+  "desc": "From luxury resorts to authentic homestays across India.",
+  "show_in_signup": true
+}

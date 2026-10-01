@@ -1,0 +1,17 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-25T06:43:33+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260925_064333_cf48dd",
+        "full_name": "Rahul Sharma",
+        "email": "test_interest_1790318613648@example.com",
+        "phone": "",
+        "interests": [
+            "Hotels & Accommodations",
+            "Real Estate"
+        ],
+        "role": "user",
+        "folder": "user_test_interest_1790318613648_exam_98c9ff"
+    }
+}

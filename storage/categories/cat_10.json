@@ -1,0 +1,9 @@
+{
+  "id": 10,
+  "name": "Home & Garden",
+  "count": "1,050+",
+  "slug": "home-garden",
+  "icon": "home-garden.svg",
+  "desc": "Home improvement, interiors, landscaping, and garden services.",
+  "show_in_signup": false
+}

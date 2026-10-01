@@ -1,0 +1,14 @@
+{
+    "id": 9,
+    "img": "tourism_02.jpg",
+    "avatar": "david.webp",
+    "cat": "Tourism & Travel",
+    "cat_slug": "tourism",
+    "rating": "4",
+    "title": "Golden Triangle Private Guide",
+    "loc": "Delhi NCR",
+    "phone": "+91 93333 44556",
+    "price": "₹6,500\/day",
+    "badge": "",
+    "desc": "Licensed private guide for Delhi–Agra–Jaipur with flexible itineraries beyond tourist checklists."
+}

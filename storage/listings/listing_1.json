@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "img": "realestate_03.webp",
+    "avatar": "ryan.webp",
+    "cat": "Real Estate",
+    "cat_slug": "real-estate",
+    "rating": "5.0",
+    "title": "Heritage Haveli Stay in Jaipur",
+    "loc": "Jaipur, Rajasthan",
+    "phone": "+91 98765 43210",
+    "price": "From ₹4,500\/night",
+    "badge": "featured",
+    "desc": "A verified heritage stay with courtyard dining, local host experiences, and authentic Rajasthani hospitality.",
+    "updated_at": "2026-09-29T11:17:46+00:00"
+}

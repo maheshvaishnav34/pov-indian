@@ -1,0 +1,14 @@
+{
+    "id": 16,
+    "img": "legal_02.jpg",
+    "avatar": "emma.webp",
+    "cat": "Legal & Consulting Firms",
+    "cat_slug": "legal",
+    "rating": "4",
+    "title": "Business Strategy Consultants",
+    "loc": "Bangalore, Karnataka",
+    "phone": "+91 98765 30302",
+    "price": "Project based",
+    "badge": "",
+    "desc": "Go-to-market and operations consulting for Indian SMEs expanding nationally."
+}

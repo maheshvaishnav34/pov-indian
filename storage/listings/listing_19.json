@@ -1,0 +1,14 @@
+{
+    "id": 19,
+    "img": "automotive_03.webp",
+    "avatar": "david.webp",
+    "cat": "Auto Services",
+    "cat_slug": "auto",
+    "rating": "5",
+    "title": "Express Detailing Garage",
+    "loc": "Mumbai, Maharashtra",
+    "phone": "+91 98765 50501",
+    "price": "₹999 – ₹7,500",
+    "badge": "featured",
+    "desc": "Doorstep pickup detailing and periodic service packages for city cars."
+}

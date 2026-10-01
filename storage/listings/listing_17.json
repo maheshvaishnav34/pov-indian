@@ -1,0 +1,14 @@
+{
+    "id": 17,
+    "img": "garden_01.jpg",
+    "avatar": "lisa.webp",
+    "cat": "Home & Garden",
+    "cat_slug": "home-garden",
+    "rating": "5",
+    "title": "Urban Garden Studio",
+    "loc": "Delhi NCR",
+    "phone": "+91 98765 40401",
+    "price": "From ₹2,500",
+    "badge": "top",
+    "desc": "Balcony and terrace landscaping with native plants and maintenance plans."
+}

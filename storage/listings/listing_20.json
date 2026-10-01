@@ -1,0 +1,14 @@
+{
+    "id": 20,
+    "img": "car_01.webp",
+    "avatar": "ryan.webp",
+    "cat": "Auto Services",
+    "cat_slug": "auto",
+    "rating": "4",
+    "title": "Trusted Multi-Brand Workshop",
+    "loc": "Jaipur, Rajasthan",
+    "phone": "+91 98765 50502",
+    "price": "Estimate on inspection",
+    "badge": "",
+    "desc": "Verified mechanics for routine service, AC repair, and insurance jobs."
+}

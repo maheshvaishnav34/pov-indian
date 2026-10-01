@@ -1,0 +1,17 @@
+{
+    "id": "usr_20260924_115219_54ae2d",
+    "name": "Aarav Patel",
+    "email": "aarav@example.com",
+    "password_hash": "$2y$12$7UlV1BEH6Uhnz\/saRTrLAu\/15chE.123LT4AywE1.JIHD9wavW09O",
+    "role": "user",
+    "interests": [
+        "Tourism",
+        "Education"
+    ],
+    "phone": "",
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-09-24T11:52:19+00:00",
+    "updated_at": "2026-09-24T11:52:19+00:00",
+    "folder": "user_aarav_example_com_013853"
+}

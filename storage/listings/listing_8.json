@@ -1,0 +1,14 @@
+{
+    "id": 8,
+    "img": "college_01.jpg",
+    "avatar": "james.webp",
+    "cat": "Colleges & Universities",
+    "cat_slug": "colleges",
+    "rating": "5",
+    "title": "Campus Guide: Tech University Hub",
+    "loc": "Delhi NCR",
+    "phone": "+91 91111 22334",
+    "price": "Student verified",
+    "badge": "bump",
+    "desc": "Local student insights on hostels, commute, clubs, and campus life for international applicants."
+}

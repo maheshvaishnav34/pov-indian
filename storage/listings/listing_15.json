@@ -1,0 +1,14 @@
+{
+    "id": 15,
+    "img": "legal_01.jpg",
+    "avatar": "ryan.webp",
+    "cat": "Legal & Consulting Firms",
+    "cat_slug": "legal",
+    "rating": "5",
+    "title": "Corporate Counsel Associates",
+    "loc": "Mumbai, Maharashtra",
+    "phone": "+91 98765 30301",
+    "price": "Retainer \/ hourly",
+    "badge": "featured",
+    "desc": "Company law, contracts, and startup advisory with clear engagement terms."
+}

@@ -1,0 +1,16 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T11:50:09+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260924_115008_eeeb43",
+        "full_name": "ocdiosj",
+        "email": "fyeruew@gmail.com",
+        "phone": "",
+        "interests": [
+            "Tourism"
+        ],
+        "role": "user",
+        "folder": "user_fyeruew_gmail_com_842bd5"
+    }
+}

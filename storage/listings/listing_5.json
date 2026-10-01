@@ -1,0 +1,14 @@
+{
+    "id": 5,
+    "img": "tourism_01.jpg",
+    "avatar": "lisa.webp",
+    "cat": "Tourism & Travel",
+    "cat_slug": "tourism",
+    "rating": "5",
+    "title": "Kerala Backwaters Day Experience",
+    "loc": "Alleppey, Kerala",
+    "phone": "+91 98700 11223",
+    "price": "₹2,999\/person",
+    "badge": "",
+    "desc": "Guided day cruise through canals with lunch on board and village stopovers curated by locals."
+}

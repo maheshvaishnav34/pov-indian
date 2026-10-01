@@ -1,0 +1,14 @@
+{
+    "id": 4,
+    "img": "cafe_01.webp",
+    "avatar": "david.webp",
+    "cat": "Restaurants & Cafés",
+    "cat_slug": "restaurants",
+    "rating": "4",
+    "title": "Filter Coffee & Local Bites",
+    "loc": "Bangalore, Karnataka",
+    "phone": "+91 90123 45678",
+    "price": "₹150 – ₹600",
+    "badge": "top",
+    "desc": "Neighbourhood cafe known for strong filter coffee, regional snacks, and student-friendly seating."
+}

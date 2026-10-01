@@ -1,0 +1,16 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-25T06:52:46+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260925_065246_6dd86c",
+        "full_name": "rfkkrf",
+        "email": "admin828ue8w@povindian.com",
+        "phone": "",
+        "interests": [
+            "Hotels & Accommodations"
+        ],
+        "role": "user",
+        "folder": "user_admin828ue8w_povindian_com_61a183"
+    }
+}

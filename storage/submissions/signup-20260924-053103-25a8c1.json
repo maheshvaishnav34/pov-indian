@@ -1,0 +1,12 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T05:31:03+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "full_name": "mahesh Do",
+        "email": "d0iw-0qi@gmail.com",
+        "interests": [
+            "Tourism"
+        ]
+    }
+}

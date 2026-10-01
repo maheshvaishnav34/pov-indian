@@ -1,0 +1,9 @@
+{
+  "id": 4,
+  "name": "Wellness & Ayurveda",
+  "count": "760+",
+  "slug": "wellness",
+  "icon": "beauty-spas.svg",
+  "desc": "Traditional and modern wellness centers, retreats, and Ayurveda.",
+  "show_in_signup": false
+}

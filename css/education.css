@@ -1,0 +1,2126 @@
+/* ==========================================================================
+   POV Indian: Higher Education & College Discovery (2026–27)
+   Theme: Calmer Education Discovery (Deep Petrol, Warm Linen, Burnt Terracotta)
+   Directly matching PRD v2.0 & Strategy Specs
+   ========================================================================== */
+
+:root {
+  /* POVIndian Luxury Palette (PRD Section 04) */
+  --edu-ink: #0B1020;
+  --edu-midnight: #111827;
+  --edu-ivory: #F7F5EF;
+  --edu-soft-white: #FCFCFA;
+  --edu-gold: #C9A96E;
+  --edu-gold-hover: #b89556;
+  --edu-gold-light: rgba(201, 169, 110, 0.12);
+  --edu-indigo: #4F46E5;
+  --edu-emerald: #16866A;
+  --edu-emerald-light: #EBF8F4;
+  --edu-burgundy: #7C3F4D;
+  --edu-slate: #64748B;
+  --edu-border: #E5E7EB;
+  --edu-border-subtle: #F1F5F9;
+
+  /* Legacy aliases for backward compatibility */
+  --edu-dark: #0B1020;
+  --edu-dark-card: #111827;
+  --edu-dark-border: rgba(201, 169, 110, 0.2);
+  --edu-terracotta: #C9A96E;
+  --edu-terracotta-hover: #b89556;
+  --edu-terracotta-light: rgba(201, 169, 110, 0.12);
+  --edu-cream: #F7F5EF;
+  --edu-cream-alt: #EFECE3;
+  --edu-cream-card: #FFFFFF;
+  --edu-text-dark: #0B1020;
+  --edu-text-muted: #64748B;
+  --edu-text-light: #FCFCFA;
+  --edu-green: #16866A;
+  --edu-green-light: #EBF8F4;
+  --edu-font-serif: 'Fraunces', 'Playfair Display', serif;
+  --edu-font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --edu-radius-sm: 8px;
+  --edu-radius-md: 14px;
+  --edu-radius-lg: 20px;
+  --edu-shadow-sm: 0 2px 8px rgba(11, 16, 32, 0.05);
+  --edu-shadow-md: 0 10px 30px rgba(11, 16, 32, 0.08);
+  --edu-shadow-lg: 0 20px 50px rgba(11, 16, 32, 0.14);
+}
+
+body.edu-page {
+  background-color: var(--edu-ivory);
+  color: var(--edu-ink);
+  font-family: var(--edu-font-sans);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Image 1)
+   ========================================================================== */
+.edu-hero {
+  background: linear-gradient(180deg, #24304A 0%, #161F32 100%);
+  color: var(--edu-text-light);
+  padding: 110px 0 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.edu-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #CBD5E1;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.edu-tag-pill span.state-selector {
+  color: var(--edu-terracotta);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.edu-hero-title {
+  font-family: var(--edu-font-sans);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.edu-hero-title .accent-italic {
+  font-family: var(--edu-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--edu-terracotta);
+}
+
+.edu-hero-sub {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.edu-trust-signals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.92rem;
+  color: #E2E8F0;
+}
+
+.edu-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edu-trust-item i {
+  color: var(--edu-terracotta);
+}
+
+/* Rajasthan Map Card in Hero */
+.edu-map-card {
+  background: var(--edu-dark-card);
+  border: 1px solid var(--edu-dark-border);
+  border-radius: var(--edu-radius-lg);
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.edu-map-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--edu-terracotta);
+  font-weight: 700;
+}
+
+.edu-map-sub {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  margin-top: 4px;
+}
+
+.edu-map-icon-pill {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--edu-terracotta);
+}
+
+/* Interactive SVG Map Canvas */
+.edu-map-canvas {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  flex: 1;
+  background: radial-gradient(circle at 60% 50%, rgba(217, 119, 70, 0.08) 0%, transparent 70%);
+}
+
+.edu-map-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.edu-map-line {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.edu-map-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.edu-map-node .node-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #F8FAFC;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+}
+
+.edu-map-node.active .node-dot,
+.edu-map-node:hover .node-dot {
+  background: var(--edu-terracotta);
+  box-shadow: 0 0 0 4px rgba(217, 119, 70, 0.3), 0 0 20px var(--edu-terracotta);
+  transform: scale(1.3);
+}
+
+.edu-map-node .node-label {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.edu-map-node.active .node-label,
+.edu-map-node:hover .node-label {
+  color: #FFFFFF;
+}
+
+/* Floating Evidence Badge on Map */
+.edu-evidence-pill {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  color: var(--edu-text-dark);
+  padding: 10px 16px;
+  border-radius: var(--edu-radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.edu-evidence-pill .evidence-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--edu-green-light);
+  color: var(--edu-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.edu-evidence-pill strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+}
+
+.edu-evidence-pill small {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+.edu-map-date-tag {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-size: 0.78rem;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   2. THREE VALUE PILLARS (Below Hero, Image 1 bottom)
+   ========================================================================== */
+.edu-pillars-section {
+  background: var(--edu-cream-card);
+  border-bottom: 1px solid var(--edu-border);
+  padding: 36px 0;
+}
+
+.edu-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.edu-pillar-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.edu-pillar-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--edu-terracotta);
+  letter-spacing: -0.02em;
+  padding-top: 2px;
+}
+
+.edu-pillar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+  margin-bottom: 4px;
+}
+
+.edu-pillar-desc {
+  font-size: 0.88rem;
+  color: var(--edu-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. FOCUSED SEARCH & INTENT SECTION (Image 2)
+   ========================================================================== */
+.edu-search-section {
+  padding: 80px 0 60px 0;
+}
+
+.edu-search-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.edu-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--edu-terracotta);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.edu-search-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--edu-dark);
+  margin-bottom: 16px;
+}
+
+.edu-search-sub {
+  font-size: 1.05rem;
+  color: var(--edu-text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Guidance callout box */
+.edu-guide-callout {
+  background: #EBF3F0;
+  border-radius: var(--edu-radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-left: 4px solid var(--edu-green);
+}
+
+.edu-guide-callout .guide-icon {
+  color: var(--edu-green);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.edu-guide-callout strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #174233;
+  margin-bottom: 4px;
+}
+
+.edu-guide-callout p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #2D5A47;
+  line-height: 1.5;
+}
+
+/* Search Card Container (Image 2 right) */
+.edu-search-card {
+  background: var(--edu-cream-card);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  padding: 36px;
+  box-shadow: var(--edu-shadow-md);
+}
+
+.edu-input-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.edu-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.edu-input-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: #94A3B8;
+  font-size: 1rem;
+}
+
+.edu-input-wrap input {
+  width: 100%;
+  height: 54px;
+  padding: 0 20px 0 50px;
+  border-radius: var(--edu-radius-md);
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--edu-dark);
+  transition: all 0.2s ease;
+}
+
+.edu-input-wrap input:focus {
+  outline: none;
+  border-color: var(--edu-terracotta);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(217, 119, 70, 0.15);
+}
+
+.edu-btn-primary {
+  height: 54px;
+  padding: 0 28px;
+  background: var(--edu-terracotta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--edu-radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.edu-btn-primary:hover {
+  background: var(--edu-terracotta-hover);
+  transform: translateY(-1px);
+}
+
+/* Filter Group within Search Card */
+.edu-filter-group {
+  margin-bottom: 24px;
+}
+
+.edu-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.edu-filter-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--edu-dark);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-filter-clear {
+  font-size: 0.78rem;
+  color: var(--edu-text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.edu-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edu-pill-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--edu-border);
+  background: #FFFFFF;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edu-pill-btn:hover {
+  border-color: #CBD5E1;
+  background: #F8FAFC;
+  color: var(--edu-dark);
+}
+
+.edu-pill-btn.active-dark {
+  background: var(--edu-dark);
+  color: #FFFFFF;
+  border-color: var(--edu-dark);
+}
+
+.edu-pill-btn.active-terracotta {
+  background: var(--edu-terracotta-light);
+  color: var(--edu-terracotta);
+  border-color: rgba(217, 119, 70, 0.35);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. SHORTCUTS & ADMISSION UPDATES (Image 3)
+   ========================================================================== */
+.edu-shortcuts-section {
+  padding: 40px 0 60px 0;
+}
+
+.edu-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.edu-section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--edu-dark);
+  letter-spacing: -0.02em;
+}
+
+.edu-section-hint {
+  font-size: 0.85rem;
+  color: var(--edu-text-muted);
+}
+
+.edu-shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.edu-shortcut-card {
+  background: var(--edu-cream-card);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.edu-shortcut-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--edu-shadow-md);
+  border-color: var(--edu-terracotta);
+}
+
+.edu-shortcut-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.edu-shortcut-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--edu-text-muted);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-shortcut-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+  margin-bottom: 2px;
+}
+
+.edu-shortcut-sub {
+  font-size: 0.78rem;
+  color: var(--edu-text-muted);
+}
+
+.edu-shortcut-card i {
+  color: var(--edu-terracotta);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.edu-shortcut-card:hover i {
+  transform: translateX(4px);
+}
+
+/* Latest Admissions Cards */
+.edu-alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.edu-alert-card {
+  background: var(--edu-cream-card);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.edu-alert-card:hover {
+  box-shadow: var(--edu-shadow-md);
+  border-color: #CBD5E1;
+}
+
+.edu-alert-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.edu-alert-badge.exam {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+.edu-alert-badge.deadline {
+  background: #E0E7FF;
+  color: #4338CA;
+}
+
+.edu-alert-badge.guide {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.edu-alert-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.edu-alert-meta {
+  font-size: 0.78rem;
+  color: var(--edu-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-alert-arrow {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   5. THE USEFUL SHORTLIST & COLLEGE CARDS (Image 4)
+   ========================================================================== */
+.edu-shortlist-section {
+  padding: 40px 0 100px 0;
+}
+
+.edu-shortlist-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.edu-shortlist-heading {
+  font-family: var(--edu-font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--edu-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.edu-shortlist-heading .highlight {
+  color: var(--edu-terracotta);
+}
+
+.edu-shortlist-intro {
+  font-size: 1rem;
+  color: var(--edu-text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.edu-freshness-note {
+  background: #FDF9F3;
+  border-radius: var(--edu-radius-md);
+  padding: 16px 20px;
+  border: 1px solid #F2E4CF;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.edu-freshness-note i {
+  color: var(--edu-terracotta);
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.edu-freshness-note strong {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--edu-dark);
+  margin-bottom: 2px;
+}
+
+.edu-freshness-note p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #786C5A;
+  line-height: 1.45;
+}
+
+.edu-trust-pill-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #64748B;
+  background: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--edu-border);
+}
+
+/* College Cards Grid (Image 4 right) */
+.edu-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.edu-cards-count {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--edu-dark);
+}
+
+.edu-cards-count small {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--edu-text-muted);
+  margin-left: 8px;
+}
+
+.edu-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Single College Card (Exact Image 4 design) */
+.edu-card {
+  background: var(--edu-cream-card);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 24px;
+  box-shadow: var(--edu-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--edu-shadow-md);
+  border-color: #CBD5E1;
+}
+
+.edu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.edu-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edu-card-bookmark {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.edu-card-bookmark:hover,
+.edu-card-bookmark.bookmarked {
+  color: var(--edu-terracotta);
+}
+
+.edu-card-location {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--edu-terracotta);
+  margin-bottom: 4px;
+}
+
+.edu-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--edu-dark);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.edu-card-type {
+  font-size: 0.85rem;
+  color: var(--edu-text-muted);
+  margin-bottom: 16px;
+}
+
+.edu-card-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.edu-course-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+}
+
+/* Card Bottom & Provenance */
+.edu-card-status-bar {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+  margin-bottom: 16px;
+}
+
+.edu-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.edu-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--edu-green);
+}
+
+.edu-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--edu-green);
+}
+
+.edu-verified-date {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.edu-provenance-link {
+  font-size: 0.75rem;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.edu-provenance-link:hover {
+  color: var(--edu-dark);
+  text-decoration: underline;
+}
+
+.edu-provenance-link i {
+  color: var(--edu-green);
+  font-size: 0.8rem;
+}
+
+.edu-card-btn {
+  width: 100%;
+  padding: 12px 18px;
+  background: #FAF7F2;
+  border: 1px solid #E5DFD5;
+  border-radius: var(--edu-radius-sm);
+  color: var(--edu-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.edu-card-btn:hover {
+  background: var(--edu-terracotta);
+  border-color: var(--edu-terracotta);
+  color: #FFFFFF;
+}
+
+.edu-card-btn i {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.edu-card-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   6. SHORTLIST TRAY & COMPARE BAR ("Save the maybes. Ask better questions.")
+   ========================================================================== */
+.edu-shortlist-tray-section {
+  background: #E8EFEF;
+  border-radius: var(--edu-radius-lg);
+  padding: 40px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.edu-tray-left h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--edu-dark);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.edu-tray-left p {
+  color: #4A6369;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.edu-saved-pill-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+}
+
+.edu-tray-right-card {
+  background: var(--edu-dark);
+  border-radius: var(--edu-radius-md);
+  padding: 28px;
+  color: #FFFFFF;
+}
+
+.edu-tray-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.edu-tray-mini-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.edu-tray-mini-box strong {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+
+.edu-tray-mini-box small {
+  font-size: 0.75rem;
+  color: #CBD5E1;
+}
+
+/* Real Person Counselling Banner (Bottom Image 4) */
+.edu-counsel-banner {
+  background: #FFFFFF;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 28px 36px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--edu-shadow-sm);
+}
+
+.edu-counsel-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.edu-counsel-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FBEFE8;
+  color: var(--edu-terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.edu-counsel-text strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--edu-dark);
+  margin-bottom: 4px;
+}
+
+.edu-counsel-text p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--edu-text-muted);
+  max-width: 580px;
+}
+
+/* ==========================================================================
+   7. MODALS & DRAWERS (College Detail & Enquiry)
+   ========================================================================== */
+.edu-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 43, 57, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.edu-modal-backdrop.open {
+  display: flex;
+}
+
+.edu-modal-window {
+  background: #FFFFFF;
+  border-radius: var(--edu-radius-lg);
+  max-width: 740px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 40px;
+  animation: eduModalSlide 0.25s ease forwards;
+}
+
+@keyframes eduModalSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.edu-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: none;
+  font-size: 1rem;
+  color: #64748B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edu-modal-close:hover {
+  background: #E2E8F0;
+  color: var(--edu-dark);
+}
+
+.edu-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.edu-form-group {
+  margin-bottom: 16px;
+}
+
+.edu-form-group.full-width {
+  grid-column: span 2;
+}
+
+.edu-form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--edu-dark);
+  margin-bottom: 6px;
+}
+
+.edu-form-group input,
+.edu-form-group select,
+.edu-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--edu-radius-sm);
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--edu-dark);
+}
+
+.edu-form-group input:focus,
+.edu-form-group select:focus,
+.edu-form-group textarea:focus {
+  outline: none;
+  border-color: var(--edu-terracotta);
+  box-shadow: 0 0 0 3px rgba(217, 119, 70, 0.15);
+}
+
+.edu-consent-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--edu-radius-sm);
+  padding: 14px;
+  font-size: 0.78rem;
+  color: #64748B;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Detail Drawer Specifics */
+.edu-detail-header {
+  border-bottom: 1px solid var(--edu-border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.edu-provenance-box {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: var(--edu-radius-sm);
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 0.85rem;
+}
+
+.edu-offerings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.88rem;
+}
+
+.edu-offerings-table th {
+  background: #F8FAFC;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--edu-dark);
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.edu-offerings-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+/* Compare Side-by-Side Modal */
+.edu-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.edu-compare-table th,
+.edu-compare-table td {
+  padding: 14px;
+  border: 1px solid var(--edu-border);
+  font-size: 0.85rem;
+}
+
+.edu-compare-table th {
+  background: #F8FAFC;
+  color: var(--edu-dark);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .edu-hero-grid,
+  .edu-search-grid,
+  .edu-shortlist-layout,
+  .edu-shortlist-tray-section {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-hero-title {
+    font-size: 2.6rem;
+  }
+
+  .edu-pillars-grid,
+  .edu-shortcuts-grid,
+  .edu-alerts-grid,
+  .edu-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .edu-counsel-banner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   9. PAGE-BASED PAGINATION CONTROLS
+   ========================================================================== */
+.edu-pagination-wrapper {
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: var(--edu-radius-md);
+  border: 1px solid var(--edu-border);
+  box-shadow: var(--edu-shadow-sm);
+}
+
+.edu-pagination-info {
+  font-size: 0.88rem;
+  color: var(--edu-text-muted);
+  font-weight: 600;
+}
+
+.edu-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-page-btn {
+  height: 38px;
+  min-width: 38px;
+  padding: 0 14px;
+  border-radius: var(--edu-radius-sm);
+  border: 1px solid var(--edu-border);
+  background: #FFFFFF;
+  color: var(--edu-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.edu-page-btn:hover:not(:disabled) {
+  border-color: var(--edu-terracotta);
+  color: var(--edu-terracotta);
+  background: var(--edu-terracotta-light);
+}
+
+.edu-page-btn.active {
+  background: var(--edu-dark);
+  color: #FFFFFF;
+  border-color: var(--edu-dark);
+}
+
+.edu-page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #E2E8F0;
+  background: #F8FAFC;
+  color: #94A3B8;
+}
+
+.edu-page-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   10. SIGNATURE POVINDIAN LUXURY COMPONENTS (PRD Sections 08 - 74)
+   ========================================================================== */
+
+/* 10.1 Trust Strip */
+.edu-trust-strip {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--edu-border);
+  padding: 20px 0;
+}
+
+.edu-trust-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.edu-trust-strip-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--edu-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-trust-strip-title i {
+  color: var(--edu-gold);
+}
+
+.edu-trust-strip-items {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.edu-trust-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.edu-trust-strip-item i {
+  color: var(--edu-emerald);
+  font-size: 0.9rem;
+}
+
+/* 10.2 Academic Year Switcher */
+.edu-year-bar {
+  display: inline-flex;
+  align-items: center;
+  background: #F1F5F9;
+  border: 1px solid var(--edu-border);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.edu-year-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--edu-slate);
+  padding: 0 10px;
+}
+
+.edu-year-btn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edu-year-btn:hover {
+  color: var(--edu-ink);
+}
+
+.edu-year-btn.active {
+  background: var(--edu-ink);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(11, 16, 32, 0.2);
+}
+
+.edu-year-btn.active .edu-year-badge {
+  background: var(--edu-gold);
+  color: var(--edu-ink);
+}
+
+.edu-year-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  margin-left: 4px;
+  font-weight: 800;
+  background: #CBD5E1;
+  color: #0F172A;
+}
+
+/* 10.3 Discover by Intent (PRD Section 10) */
+.edu-intent-section {
+  padding: 60px 0 30px 0;
+}
+
+.edu-intent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.edu-intent-card {
+  background: #FFFFFF;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edu-intent-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--edu-gold);
+  box-shadow: 0 12px 30px rgba(11, 16, 32, 0.08);
+}
+
+.edu-intent-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--edu-ivory);
+  border: 1px solid var(--edu-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--edu-ink);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.edu-intent-card:hover .edu-intent-icon-wrap {
+  background: var(--edu-ink);
+  color: var(--edu-gold);
+  border-color: var(--edu-ink);
+}
+
+.edu-intent-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+  margin-bottom: 6px;
+}
+
+.edu-intent-desc {
+  font-size: 0.85rem;
+  color: var(--edu-slate);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.edu-intent-action {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--edu-gold-hover);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-intent-card:hover .edu-intent-action {
+  color: var(--edu-ink);
+}
+
+/* 10.4 Explainable Recommendation Match Pill */
+.edu-match-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--edu-emerald-light);
+  color: var(--edu-emerald);
+  border: 1px solid rgba(22, 134, 106, 0.25);
+  margin-bottom: 8px;
+}
+
+.edu-match-reasons {
+  background: #F8FAFC;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-size: 0.78rem;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+}
+
+.edu-match-reasons strong {
+  display: block;
+  color: var(--edu-ink);
+  margin-bottom: 4px;
+}
+
+.edu-match-check {
+  color: var(--edu-emerald);
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+/* 10.5 Data Provenance Slide-over Drawer (PRD Section 66) */
+.edu-provenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(11, 16, 32, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.edu-provenance-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edu-provenance-drawer {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 520px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #FFFFFF;
+  z-index: 9999;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.edu-provenance-drawer.open {
+  right: 0;
+}
+
+.edu-provenance-head {
+  padding: 24px 28px;
+  background: var(--edu-ink);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edu-provenance-head h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.edu-provenance-head p {
+  margin: 4px 0 0 0;
+  font-size: 0.82rem;
+  color: #94A3B8;
+}
+
+.edu-provenance-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.edu-provenance-body {
+  padding: 28px;
+  flex: 1;
+}
+
+.edu-provenance-card {
+  background: #F8FAFC;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.edu-provenance-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 0.88rem;
+}
+
+.edu-provenance-field:last-child {
+  border-bottom: none;
+}
+
+.edu-provenance-field .label {
+  color: var(--edu-slate);
+  font-weight: 600;
+}
+
+.edu-provenance-field .val {
+  font-weight: 700;
+  color: var(--edu-ink);
+  text-align: right;
+}
+
+/* 10.6 3-Way Sticky College Comparison Matrix (PRD Section 35) */
+.edu-compare-matrix-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--edu-border);
+  border-bottom: 1px solid var(--edu-border);
+}
+
+.edu-compare-matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.edu-compare-matrix-table th,
+.edu-compare-matrix-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--edu-border);
+  border-right: 1px solid var(--edu-border);
+  font-size: 0.88rem;
+  vertical-align: top;
+}
+
+.edu-compare-matrix-table th:last-child,
+.edu-compare-matrix-table td:last-child {
+  border-right: none;
+}
+
+.edu-compare-matrix-table thead th {
+  background: #F8FAFC;
+  font-weight: 800;
+  color: var(--edu-ink);
+}
+
+.edu-compare-matrix-table tbody tr:hover {
+  background: #FAF7F2;
+}
+
+.edu-compare-matrix-table .matrix-col-param {
+  width: 24%;
+  font-weight: 700;
+  color: #334155;
+  background: #FCFCFA;
+}
+
+/* 10.7 National Entrance Exams 7-Stage Milestone Progression (PRD Sections 30-31) */
+.edu-exams-section {
+  padding: 80px 0;
+  background: var(--edu-ivory);
+}
+
+.edu-exam-card {
+  background: #FFFFFF;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--edu-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.edu-exam-card:hover {
+  box-shadow: var(--edu-shadow-md);
+}
+
+.edu-exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.edu-exam-badge-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--edu-gold-hover);
+  background: var(--edu-gold-light);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.edu-milestone-track {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  position: relative;
+  margin: 24px 0 16px 0;
+}
+
+.edu-milestone-track::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: #E2E8F0;
+  z-index: 1;
+}
+
+.edu-milestone-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.edu-milestone-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748B;
+  margin-bottom: 8px;
+}
+
+.edu-milestone-step.completed .edu-milestone-dot {
+  background: var(--edu-emerald);
+  border-color: var(--edu-emerald);
+  color: #FFFFFF;
+}
+
+.edu-milestone-step.active .edu-milestone-dot {
+  background: var(--edu-ink);
+  border-color: var(--edu-gold);
+  color: var(--edu-gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.25);
+}
+
+.edu-milestone-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--edu-ink);
+  line-height: 1.3;
+}
+
+.edu-milestone-date {
+  font-size: 0.7rem;
+  color: var(--edu-slate);
+  margin-top: 2px;
+}
+
+/* 10.8 High-Growth Career Trajectories & CTC Progression (PRD Sections 32-33) */
+.edu-careers-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+}
+
+.edu-careers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.edu-career-card {
+  background: var(--edu-ivory);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edu-ctc-ladder {
+  background: #FFFFFF;
+  border-radius: var(--edu-radius-sm);
+  border: 1px solid var(--edu-border);
+  padding: 16px;
+  margin: 18px 0;
+}
+
+.edu-ctc-stage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #E2E8F0;
+  font-size: 0.85rem;
+}
+
+.edu-ctc-stage:last-child {
+  border-bottom: none;
+}
+
+.edu-ctc-stage .stage-title {
+  color: #475569;
+  font-weight: 600;
+}
+
+.edu-ctc-stage .stage-ctc {
+  font-weight: 800;
+  color: var(--edu-ink);
+}
+
+/* 10.9 Scholarships & Financial Aid Directory (PRD Section 37) */
+.edu-scholarships-section {
+  padding: 80px 0;
+  background: var(--edu-ivory);
+}
+
+.edu-scholarships-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.edu-scholarship-card {
+  background: #FFFFFF;
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.edu-scholarship-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--edu-shadow-md);
+  border-color: var(--edu-gold);
+}
+
+.edu-scholarship-amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--edu-emerald);
+  margin: 10px 0;
+}
+
+/* 10.10 Verified Student Reviews with Multi-Criteria Rating (PRD Section 24) */
+.edu-reviews-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+}
+
+.edu-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.edu-review-card {
+  background: var(--edu-ivory);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 28px;
+}
+
+.edu-verified-student-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--edu-emerald);
+  background: var(--edu-emerald-light);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.edu-rating-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+  background: #FFFFFF;
+  padding: 12px;
+  border-radius: var(--edu-radius-sm);
+  border: 1px solid var(--edu-border);
+  font-size: 0.8rem;
+}
+
+.edu-rating-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-rating-item span.label {
+  color: var(--edu-slate);
+  font-size: 0.72rem;
+}
+
+.edu-rating-item span.val {
+  font-weight: 800;
+  color: var(--edu-ink);
+}
+
+/* 10.11 Dual-Consent Box */
+.edu-consent-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 18px 0;
+  display: flex;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.edu-consent-box.secondary {
+  background: #FFFFFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .edu-intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .edu-milestone-track {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .edu-milestone-track::before {
+    display: none;
+  }
+  .edu-scholarships-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-intent-grid,
+  .edu-careers-grid,
+  .edu-scholarships-grid,
+  .edu-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .edu-milestone-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .edu-provenance-drawer {
+    width: 100vw;
+  }
+}
+

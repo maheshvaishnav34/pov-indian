@@ -1,0 +1,9 @@
+{
+  "id": 2,
+  "name": "Restaurants & Cafés",
+  "count": "2,850+",
+  "slug": "restaurants",
+  "icon": "cafe.svg",
+  "desc": "Authentic culinary experiences from street food to fine dining.",
+  "show_in_signup": false
+}

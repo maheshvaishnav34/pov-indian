@@ -1,0 +1,17 @@
+{
+    "id": "usr_20260925_053307_0af387",
+    "name": "rfkkrfr",
+    "email": "asreerdjs@gmail.com",
+    "password_hash": "$2y$12$N9l4l402UJUk7WIX3VakVuGtzM5XaoUATGMzZp4SeKmovPZzA3qc6",
+    "role": "user",
+    "interests": [
+        "Restaurants & Cafés",
+        "Colleges & Universities"
+    ],
+    "phone": "",
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-09-25T05:33:07+00:00",
+    "updated_at": "2026-09-25T05:33:07+00:00",
+    "folder": "user_asreerdjs_gmail_com_0a6dbb"
+}

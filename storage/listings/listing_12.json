@@ -1,0 +1,14 @@
+{
+    "id": 12,
+    "img": "healthcare_02.jpg",
+    "avatar": "james.webp",
+    "cat": "Healthcare & Hospitals",
+    "cat_slug": "healthcare",
+    "rating": "4",
+    "title": "Family Clinic & Diagnostics",
+    "loc": "Pune, Maharashtra",
+    "phone": "+91 98765 10102",
+    "price": "From ₹400",
+    "badge": "",
+    "desc": "Neighbourhood clinic known for transparent pricing and reliable lab partners."
+}

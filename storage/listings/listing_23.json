@@ -1,0 +1,14 @@
+{
+    "id": 23,
+    "img": "college_02.jpg",
+    "avatar": "james.webp",
+    "cat": "Colleges & Universities",
+    "cat_slug": "colleges",
+    "rating": "4",
+    "title": "Design School Orientation Guide",
+    "loc": "Ahmedabad, Gujarat",
+    "phone": "+91 98765 70701",
+    "price": "Free guide",
+    "badge": "",
+    "desc": "Student-led overview of studios, housing, and portfolio culture for design campuses."
+}

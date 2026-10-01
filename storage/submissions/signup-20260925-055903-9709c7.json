@@ -1,0 +1,16 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-25T05:59:03+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260925_055903_6edee7",
+        "full_name": "rfkkrfdwwww",
+        "email": "wwwww@gmail.com",
+        "phone": "",
+        "interests": [
+            "Colleges & Universities"
+        ],
+        "role": "user",
+        "folder": "user_wwwww_gmail_com_bf26ca"
+    }
+}

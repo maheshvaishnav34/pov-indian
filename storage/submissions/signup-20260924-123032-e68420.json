@@ -1,0 +1,14 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T12:30:32+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260924_123031_5ed8a3",
+        "full_name": "asdfghjnkm",
+        "email": "huhhhwh@gmail.com",
+        "phone": "",
+        "interests": [],
+        "role": "user",
+        "folder": "user_huhhhwh_gmail_com_8620eb"
+    }
+}

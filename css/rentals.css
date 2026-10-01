@@ -1,0 +1,1339 @@
+/* ==========================================================
+   POVINDIAN Rentals & Stays - Warm Editorial Design System
+   Inspired by Minimalist, Landmark-First Indian Living
+   ========================================================== */
+
+:root {
+  --rental-bg-warm: #FAF7F2;
+  --rental-card-bg: #FFFFFF;
+  --rental-sage-bg: #EBF1EE;
+  --rental-cream-tab: #F0EAE1;
+  --rental-terracotta: #C85A32;
+  --rental-terracotta-hover: #B54E28;
+  --rental-navy: #1A2130;
+  --rental-navy-light: #2D3748;
+  --rental-muted: #5A6578;
+  --rental-border: #EAE4DC;
+  --rental-border-light: #F0EBE1;
+  --rental-accent-amber: #D97706;
+  --rental-accent-blue: #0284C7;
+  --rental-accent-green: #059669;
+  --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --rental-shadow: 0 10px 30px rgba(26, 33, 48, 0.05);
+  --rental-shadow-hover: 0 16px 36px rgba(26, 33, 48, 0.1);
+}
+
+body.rentals-page {
+  background-color: var(--rental-bg-warm);
+  color: var(--rental-navy);
+  font-family: var(--font-sans);
+}
+
+/* ==========================================================
+   1. HERO SECTION (Screenshot 1: 2-Column Warm Editorial)
+   ========================================================== */
+.rentals-hero-v2 {
+  padding: 130px 0 50px;
+  background: var(--rental-bg-warm);
+  position: relative;
+}
+
+.rentals-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .rentals-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Left Intro */
+.hero-left-intro {
+  max-width: 620px;
+}
+
+.hero-eyebrow-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--rental-terracotta);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-editorial-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 4.6vw, 56px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--rental-navy);
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+.hero-editorial-title .accent-terracotta {
+  color: var(--rental-terracotta);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero-editorial-subtitle {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.65;
+  color: var(--rental-muted);
+  margin: 0 0 28px;
+}
+
+.hero-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.trust-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--rental-navy-light);
+}
+
+.trust-badge-item i {
+  color: #10B981;
+  font-size: 14px;
+}
+
+.trust-badge-item i.fa-clock {
+  color: #64748B;
+}
+
+/* Right Clean Search Card */
+.hero-search-card {
+  background: var(--rental-card-bg);
+  border-radius: 24px;
+  padding: 28px 30px;
+  border: 1px solid var(--rental-border);
+  box-shadow: 0 16px 40px rgba(26, 33, 48, 0.05);
+}
+
+.search-card-title {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 14px;
+}
+
+/* Segmented Tab Switcher */
+.intent-segmented-bar {
+  display: flex;
+  background: var(--rental-cream-tab);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.intent-seg-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--rental-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.intent-seg-btn:hover {
+  color: var(--rental-navy);
+}
+
+.intent-seg-btn.active {
+  background: #ffffff;
+  color: var(--rental-terracotta);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.intent-hint-text {
+  font-size: 12.5px;
+  color: var(--rental-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.intent-hint-text .hint-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rental-terracotta);
+  display: inline-block;
+}
+
+/* Form Fields */
+.hero-clean-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-micro-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #8C96A5;
+}
+
+.clean-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid var(--rental-border);
+  border-radius: 12px;
+  padding: 11px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.clean-search-input-wrap:focus-within {
+  border-color: var(--rental-terracotta);
+  box-shadow: 0 0 0 3px rgba(200, 90, 50, 0.12);
+}
+
+.clean-search-input-wrap i {
+  color: #94A3B8;
+  font-size: 15px;
+}
+
+.clean-search-input-wrap input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--rental-navy);
+}
+
+.clean-search-input-wrap input::placeholder {
+  color: #94A3B8;
+}
+
+/* Dropdowns + Button Row */
+.form-filters-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 560px) {
+  .form-filters-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter-select-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid var(--rental-border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: #ffffff;
+  gap: 8px;
+}
+
+.filter-select-pill .pill-label {
+  font-size: 11.5px;
+  color: #8C96A5;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.filter-select-pill select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--rental-navy);
+  width: 100%;
+  cursor: pointer;
+}
+
+.pill-budget-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pill-budget-wrap .pill-label {
+  font-size: 10px;
+  color: #8C96A5;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pill-budget-wrap select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rental-navy);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-select-pill .pill-icon {
+  color: #94A3B8;
+  font-size: 13px;
+}
+
+.btn-clean-search {
+  height: 48px;
+  padding: 0 22px;
+  background: var(--rental-terracotta);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(200, 90, 50, 0.25);
+  white-space: nowrap;
+}
+
+.btn-clean-search:hover {
+  background: var(--rental-terracotta-hover);
+  transform: translateY(-1px);
+}
+
+/* Quick Try Pills */
+.hero-try-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.try-label {
+  font-size: 12px;
+  color: #8C96A5;
+  font-weight: 500;
+}
+
+.try-pill {
+  border: 1px solid var(--rental-border);
+  background: #ffffff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--rental-navy-light);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.try-pill:hover {
+  border-color: var(--rental-terracotta);
+  color: var(--rental-terracotta);
+  background: #FAF7F2;
+}
+
+/* ==========================================================
+   2. CURATED SECTION (Screenshot 2: "Places worth a closer look")
+   ========================================================== */
+.curated-section {
+  padding: 40px 0 50px;
+  background: var(--rental-bg-warm);
+}
+
+.curated-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.curated-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--rental-terracotta);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.curated-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--rental-navy);
+  margin: 0 0 6px;
+  letter-spacing: -0.015em;
+}
+
+.curated-sub {
+  font-size: 14.5px;
+  color: var(--rental-muted);
+  margin: 0;
+}
+
+.curated-see-all {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rental-terracotta);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.curated-see-all:hover {
+  gap: 10px;
+}
+
+.curated-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .curated-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.curated-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--rental-border);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26, 33, 48, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.curated-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rental-shadow-hover);
+}
+
+.curated-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.curated-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.curated-card:hover .curated-media img {
+  transform: scale(1.04);
+}
+
+.curated-badge-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ffffff;
+  color: var(--rental-navy);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.curated-fav-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  display: grid;
+  place-items: center;
+  color: var(--rental-navy);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.curated-fav-btn:hover {
+  background: #ffffff;
+  color: var(--rental-terracotta);
+  transform: scale(1.08);
+}
+
+.curated-fav-btn.active i {
+  color: #EF4444;
+  font-weight: 900;
+}
+
+.curated-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.curated-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.curated-location {
+  font-size: 12.5px;
+  color: var(--rental-terracotta);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.curated-price-row {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.curated-price-row strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--rental-navy);
+}
+
+.curated-price-row span {
+  font-size: 13px;
+  color: var(--rental-muted);
+}
+
+.curated-specs {
+  font-size: 12.5px;
+  color: var(--rental-muted);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rental-border-light);
+  margin-bottom: 12px;
+}
+
+.curated-proximity {
+  font-size: 12px;
+  font-weight: 600;
+  color: #047857;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.curated-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rental-border-light);
+}
+
+.btn-curated-visit {
+  background: #ffffff;
+  border: 1.5px solid var(--rental-border);
+  color: var(--rental-navy);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-curated-visit:hover {
+  border-color: var(--rental-terracotta);
+  color: var(--rental-terracotta);
+  background: #FAF7F2;
+}
+
+.btn-curated-wa {
+  background: #22C55E;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-curated-wa:hover {
+  background: #16A34A;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.curated-card-title a:hover {
+  color: var(--rental-terracotta);
+}
+
+/* ==========================================================
+   3. LANDMARKS SAGE SECTION (Screenshot 3: "Everyday Landmarks")
+   ========================================================== */
+.landmarks-sage-section {
+  padding: 20px 0 50px;
+  background: var(--rental-bg-warm);
+}
+
+.landmarks-sage-box {
+  background: var(--rental-sage-bg);
+  border-radius: 28px;
+  padding: 38px 40px;
+  border: 1px solid #DCE6E1;
+}
+
+@media (max-width: 768px) {
+  .landmarks-sage-box {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+}
+
+.landmarks-sage-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sage-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--rental-terracotta);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sage-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--rental-navy);
+  margin: 0 0 6px;
+  letter-spacing: -0.015em;
+}
+
+.sage-sub {
+  font-size: 14px;
+  color: #52605B;
+  margin: 0;
+}
+
+.sage-explore-all {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rental-terracotta);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.landmarks-white-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 991px) {
+  .landmarks-white-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .landmarks-white-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.landmark-white-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid #E2EBE6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.landmark-white-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: var(--rental-terracotta);
+}
+
+.landmark-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.landmark-icon-box.icon-red { background: #FDE8E4; color: #C85A32; }
+.landmark-icon-box.icon-blue { background: #E0F2FE; color: #0284C7; }
+.landmark-icon-box.icon-amber { background: #FEF3C7; color: #D97706; }
+.landmark-icon-box.icon-green { background: #DCFCE7; color: #16A34A; }
+
+.landmark-card-info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 2px;
+}
+
+.landmark-card-info p {
+  font-size: 11.5px;
+  color: var(--rental-muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* ==========================================================
+   4. FULL LISTINGS DIRECTORY & FILTER SIDEBAR
+   ========================================================== */
+.rentals-main-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .rentals-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rentals-filter-sidebar {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid var(--rental-border);
+  box-shadow: 0 4px 20px rgba(26, 33, 48, 0.04);
+}
+
+.filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rental-border-light);
+}
+
+.filter-sidebar-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-clear-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rental-terracotta);
+  text-decoration: none;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group-title {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #8C96A5;
+  margin-bottom: 10px;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #FAF7F2;
+  border: 1px solid var(--rental-border);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--rental-navy-light);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--rental-terracotta);
+  border-color: var(--rental-terracotta);
+  color: #ffffff;
+}
+
+.filter-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--rental-navy-light);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-checkbox-item input {
+  accent-color: var(--rental-terracotta);
+  cursor: pointer;
+}
+
+/* Listings Column */
+.listings-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.listings-top-bar-title h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 4px;
+}
+
+.listings-top-bar-title p {
+  font-size: 13.5px;
+  color: var(--rental-muted);
+  margin: 0;
+}
+
+.listings-sort-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--rental-muted);
+}
+
+.listings-sort-select select {
+  border: 1px solid var(--rental-border);
+  border-radius: 10px;
+  padding: 6px 12px;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rental-navy);
+  outline: none;
+}
+
+.rentals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .rentals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rental-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--rental-border);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26, 33, 48, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.rental-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--rental-shadow-hover);
+}
+
+.rental-card-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.rental-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.rental-card:hover .rental-card-media img {
+  transform: scale(1.04);
+}
+
+.rental-type-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(26, 33, 48, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.trust-badge-row {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.trust-badge-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trust-badge-pill.pov-verified { background: #DCFCE7; color: #166534; }
+.trust-badge-pill.property-evidence { background: #E0F2FE; color: #075985; }
+.trust-badge-pill.phone-verified { background: #FEF3C7; color: #92400E; }
+
+.rental-card-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.rental-landmark-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--rental-terracotta);
+  background: #FAF7F2;
+  border: 1px solid var(--rental-border-light);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.rental-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.rental-location-text {
+  font-size: 12.5px;
+  color: var(--rental-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.rental-pricing-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rental-border-light);
+}
+
+.pricing-main-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.pricing-amount {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--rental-navy);
+}
+
+.pricing-unit {
+  font-size: 12.5px;
+  color: var(--rental-muted);
+}
+
+.pricing-movein-hint {
+  font-size: 11px;
+  color: #059669;
+  font-weight: 600;
+}
+
+.rental-amenities-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.amenity-micro-tag {
+  font-size: 11px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #475569;
+}
+
+.rental-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--rental-border-light);
+}
+
+.rental-provider-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--rental-muted);
+  margin-bottom: 12px;
+}
+
+.rental-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-rental-visit {
+  background: #FAF7F2;
+  border: 1px solid var(--rental-border);
+  color: var(--rental-navy);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-rental-visit:hover {
+  background: var(--rental-navy);
+  color: #ffffff;
+  border-color: var(--rental-navy);
+}
+
+.btn-rental-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-rental-whatsapp:hover {
+  background: #20BA5A;
+}
+
+/* Modal Backdrops & Dialogs */
+.rental-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: none;
+  place-items: center;
+  padding: 20px;
+}
+
+.rental-modal-backdrop.is-open {
+  display: grid;
+}
+
+.rental-modal-box {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.2s ease-out;
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.rental-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #f1f5f9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: #64748b;
+}
+
+.rental-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.rental-modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--rental-navy);
+  margin: 0 0 2px;
+}
+
+.rental-modal-header p {
+  font-size: 13px;
+  color: var(--rental-muted);
+  margin: 0;
+}
+
+/* ==========================================================
+   5. BHARAT-FIRST LIVING & UTILITY BADGES + QUICK FILTERS
+   ========================================================== */
+.quick-filter-chips-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid var(--rental-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.qf-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--rental-muted);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 4px;
+}
+
+.qf-pill {
+  border: 1px solid var(--rental-border);
+  background: #FAF7F2;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--rental-navy-light);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.qf-pill:hover {
+  background: #ffffff;
+  border-color: var(--rental-terracotta);
+  color: var(--rental-terracotta);
+  transform: translateY(-1px);
+}
+
+.qf-pill.active {
+  background: var(--rental-navy);
+  border-color: var(--rental-navy);
+  color: #ffffff;
+}
+
+.qf-pill.active i {
+  color: #FBBF24 !important;
+}
+
+/* Card Bharat Micro-Badges */
+.bharat-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 10px;
+}
+
+.bharat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: 1px solid transparent;
+}
+
+.tag-veg {
+  background: #ECFDF5;
+  color: #065F46;
+  border-color: #A7F3D0;
+}
+
+.tag-jain {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #FDE68A;
+}
+
+.tag-nonveg {
+  background: #FFF1F2;
+  color: #9F1239;
+  border-color: #FECDD3;
+}
+
+.tag-open {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border-color: #BFDBFE;
+}
+
+.tag-curfew {
+  background: #F5F3FF;
+  color: #5B21B6;
+  border-color: #DDD6FE;
+}
+
+.tag-power {
+  background: #F0FDF4;
+  color: #166534;
+  border-color: #BBF7D0;
+}
+
+.tag-zero-brokerage {
+  background: #F8FAFC;
+  color: #0F172A;
+  border-color: #CBD5E1;
+  font-weight: 800;
+}
+

@@ -1,0 +1,9 @@
+{
+  "id": 3,
+  "name": "Colleges & Universities",
+  "count": "980+",
+  "slug": "colleges",
+  "icon": "colleges.svg",
+  "desc": "Top educational institutions with student reviews and campus guides.",
+  "show_in_signup": true
+}

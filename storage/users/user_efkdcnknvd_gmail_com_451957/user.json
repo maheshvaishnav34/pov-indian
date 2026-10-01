@@ -1,0 +1,16 @@
+{
+    "id": "usr_20260925_051518_653f6b",
+    "name": "rewoijsdi",
+    "email": "efkdcnknvd@gmail.com",
+    "password_hash": "$2y$12$XcBmaCXRA2fOS\/caxlCxEOcFuxE3NeQRq99t70j\/sbkldl\/I6nEqy",
+    "role": "user",
+    "interests": [
+        "Hotels & Accommodations"
+    ],
+    "phone": "",
+    "status": "active",
+    "is_active": true,
+    "created_at": "2026-09-25T05:15:18+00:00",
+    "updated_at": "2026-09-25T05:15:18+00:00",
+    "folder": "user_efkdcnknvd_gmail_com_451957"
+}

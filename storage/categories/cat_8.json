@@ -1,0 +1,9 @@
+{
+  "id": 8,
+  "name": "Manufacturing & Industrial",
+  "count": "920+",
+  "slug": "manufacturing",
+  "icon": "manufacturing.svg",
+  "desc": "Industrial suppliers, manufacturers, and B2B partners.",
+  "show_in_signup": false
+}

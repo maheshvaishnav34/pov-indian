@@ -1,0 +1,14 @@
+{
+    "id": 21,
+    "img": "beauty_01.jpg",
+    "avatar": "emma.webp",
+    "cat": "Health & Beauty",
+    "cat_slug": "beauty",
+    "rating": "5",
+    "title": "Heritage Beauty Lounge",
+    "loc": "Kolkata, West Bengal",
+    "phone": "+91 98765 60601",
+    "price": "₹500 – ₹4,000",
+    "badge": "featured",
+    "desc": "Bridal and everyday beauty services with hygienic, verified studio standards."
+}

@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "img": "healthcare_01.jpg",
+    "avatar": "emma.webp",
+    "cat": "Healthcare & Hospitals",
+    "cat_slug": "healthcare",
+    "rating": "5",
+    "title": "Multispecialty Care Centre",
+    "loc": "Hyderabad, Telangana",
+    "phone": "+91 98765 10101",
+    "price": "Consultation from ₹600",
+    "badge": "featured",
+    "desc": "Verified hospital network with specialist OPD, diagnostics, and international patient support."
+}

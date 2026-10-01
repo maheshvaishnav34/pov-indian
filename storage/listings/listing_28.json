@@ -1,0 +1,18 @@
+{
+    "id": 28,
+    "title": "stack",
+    "cat": "Hotels & Accommodations",
+    "cat_slug": "hotels",
+    "category_id": 1,
+    "loc": "Near Railway Station, Sadar Bazar, Abu Road, Rajasthan 307026, India",
+    "location_id": null,
+    "phone": "+91784994105",
+    "price": "223",
+    "rating": "4.9",
+    "badge": "Top Rated",
+    "img": "realestate_03.webp",
+    "avatar": "t3.webp",
+    "desc": "",
+    "created_at": "2026-09-29T11:20:58+00:00",
+    "updated_at": "2026-09-29T11:20:58+00:00"
+}

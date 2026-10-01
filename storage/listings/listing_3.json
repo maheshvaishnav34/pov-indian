@@ -1,0 +1,14 @@
+{
+    "id": 3,
+    "img": "restaurant_05.webp",
+    "avatar": "emma.webp",
+    "cat": "Restaurants & Cafés",
+    "cat_slug": "restaurants",
+    "rating": "5",
+    "title": "Coastal Seafood Kitchen",
+    "loc": "Chennai, Tamil Nadu",
+    "phone": "+91 91234 56780",
+    "price": "₹800 – ₹2,200",
+    "badge": "featured",
+    "desc": "Fresh coastal flavours with chef-led tasting menus and verified local reviews."
+}

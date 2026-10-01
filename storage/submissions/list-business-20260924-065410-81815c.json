@@ -1,0 +1,13 @@
+{
+    "type": "list-business",
+    "created_at": "2026-09-24T06:54:10+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "business_name": "stack code",
+        "category": "Tourism & Travel",
+        "city": "abu road",
+        "phone": "784994105",
+        "email": "domahh55@gmail.com",
+        "description": "33"
+    }
+}

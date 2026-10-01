@@ -1,0 +1,18 @@
+{
+    "type": "signup",
+    "created_at": "2026-09-24T11:54:23+00:00",
+    "ip": "127.0.0.1",
+    "fields": {
+        "user_id": "usr_20260924_115423_25548b",
+        "full_name": "kfejdfdkj",
+        "email": "ofjdijisjdsicj@gmail.com",
+        "phone": "",
+        "interests": [
+            "Tourism",
+            "Culture",
+            "Education"
+        ],
+        "role": "user",
+        "folder": "user_ofjdijisjdsicj_gmail_com_d2be84"
+    }
+}

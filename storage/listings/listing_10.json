@@ -1,0 +1,14 @@
+{
+    "id": 10,
+    "img": "hotel_01.jpg",
+    "avatar": "ryan.webp",
+    "cat": "Hotels & Accommodations",
+    "cat_slug": "hotels",
+    "rating": "5",
+    "title": "Luxury Heritage Resort Udaipur",
+    "loc": "Udaipur, Rajasthan",
+    "phone": "+91 94444 55667",
+    "price": "From ₹9,900\/night",
+    "badge": "featured",
+    "desc": "Lake-facing suites, curated cultural evenings, and verified concierge support for travelers."
+}

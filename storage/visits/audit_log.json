@@ -1,0 +1,46 @@
+[
+    {
+        "id": "AUDIT-1790600933-920",
+        "visit_id": "POV-VISIT-101-BC2CA",
+        "action": "STATUS_UPDATE_CONFIRMED",
+        "by": "Owner",
+        "prev_status": "REQUESTED",
+        "new_status": "CONFIRMED",
+        "note": "Slot confirmed! See you at main lobby.",
+        "timestamp": "2026-09-28 13:08:53",
+        "ip": "127.0.0.1"
+    },
+    {
+        "id": "AUDIT-1790600903-578",
+        "visit_id": "POV-VISIT-101-BC2CA",
+        "action": "VISIT_REQUESTED",
+        "by": "Vikram Malhotra (9812345678)",
+        "prev_status": null,
+        "new_status": "REQUESTED",
+        "note": "Initial visit request submitted",
+        "timestamp": "2026-09-28 13:08:23",
+        "ip": "127.0.0.1"
+    },
+    {
+        "id": "AUDIT-1790599074-509",
+        "visit_id": "POV-VISIT-103-903",
+        "action": "STATUS_UPDATE_CONFIRMED",
+        "by": "Owner",
+        "prev_status": "RESCHEDULED",
+        "new_status": "CONFIRMED",
+        "note": "Accepted proposed alternate slot.",
+        "timestamp": "2026-09-28 12:37:54",
+        "ip": "127.0.0.1"
+    },
+    {
+        "id": "AUDIT-1790598498-740",
+        "visit_id": "POV-VISIT-101-8D6AE",
+        "action": "VISIT_REQUESTED",
+        "by": "Ankit Sharma (9829012345)",
+        "prev_status": null,
+        "new_status": "REQUESTED",
+        "note": "Initial visit request submitted",
+        "timestamp": "2026-09-28 12:28:18",
+        "ip": "127.0.0.1"
+    }
+]
